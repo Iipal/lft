@@ -17,9 +17,7 @@ int		ft_memcmp(const pvoid s1, const pvoid s2, size_t n)
 {
 	ustring	str1;
 	ustring	str2;
-	size_t	i;
 
-	i = 0;
 	str2 = (ustring)s2;
 	str1 = (ustring)s1;
 	if (str1 == str2 || n == 0)
