@@ -17,7 +17,6 @@ LC = ar rc
 
 CFLAGS = -Wall -Wextra -Werror -Ofast
 
-BLINK=\033[5m
 WHITE=\033[0m
 GREEN=\033[32m
 LGREEN=\033[92m
