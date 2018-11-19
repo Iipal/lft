@@ -13,7 +13,7 @@
 #ifndef LFT_MEM_H
 # define LFT_MEM_H
 
-# include "lft.h"
+# include "lft_str.h"
 
 # define _PVOID	typedef	void*	pvoid
 

@@ -56,8 +56,9 @@ LIBOBJ = $(LIBSRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(LIBOBJ)
-	@echo "$LLIBFT:$(LGREEN)\tCompiled. Ready for use.$(WHITE)"
+	@echo "$LFDF:$(GREEN)\tCompiling LIBFT...$(WHITE)"
 	@$(LC) $(NAME) $(LIBOBJ)
+	@echo "$LLIBFT:$(LGREEN)\tCompiled & libft.a ready for use.$(WHITE)"
 
 $(LIBOBJ): %.o: %.c
 	@echo "$LLIBFT:$(GREEN)\tCompiling file:$(YELLOW)" $< "$(WHITE)to$(PURPLE)" $@ "$(WHITE)"
@@ -65,11 +66,11 @@ $(LIBOBJ): %.o: %.c
 
 clean:
 	@$(DEL) $(LIBOBJ)
-	@echo "$LLIBFT:$(ORANGE)\tRemoved *.o files.$(WHITE)"
+	@echo "$LLIBFT:$(ORANGE)\tRemoved: *.o files.$(WHITE)"
 
 fclean: clean
 	@$(DEL) $(NAME)
-	@echo "$LLIBFT:$(RED)\tRemoved libft.a.$(WHITE)"
+	@echo "$LLIBFT:$(RED)\tRemoved: libft.a.$(WHITE)"
 
 re: fclean all
 

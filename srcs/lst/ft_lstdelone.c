@@ -13,7 +13,7 @@
 #include "../../includes/lft_lst.h"
 #include "../../includes/lft_mem.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(pvoid, size_t))
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
 	if (alst && del)
 	{

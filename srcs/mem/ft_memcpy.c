@@ -13,7 +13,7 @@
 #include "../../includes/lft_mem.h"
 #include "../../includes/lft_str.h"
 
-pvoid ft_memcpy(pvoid dest, const pvoid src, size_t n)
+pvoid	ft_memcpy(pvoid dest, const pvoid src, size_t n)
 {
 	size_t	i;
 	string	dst;

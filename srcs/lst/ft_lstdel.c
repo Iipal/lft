@@ -13,7 +13,7 @@
 #include "../../includes/lft_lst.h"
 #include "../../includes/lft_mem.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(pvoid, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
 	t_list	*temp;
 

@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft.h"
+#include "../../includes/libft.h"
 #include "../../includes/lft_str.h"
 
-int		_catline_recursive(int fd, string *data, string *line, int nbytes)
+int		catline_recursive(int fd, string *data, string *line, int nbytes)
 {
 	int		to_nl;
 	string	temp_nl;
@@ -66,5 +66,5 @@ int		ft_gnl(const int fd, string *line)
 	if (nbytes == 0 &&
 		(!data[fd] || data[fd][0] == '\0'))
 		return (0);
-	return (_catline_recursive(fd, data, line, nbytes));
+	return (catline_recursive(fd, data, line, nbytes));
 }
