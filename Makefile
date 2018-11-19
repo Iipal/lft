@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2018/10/30 17:22:11 by tmaluh           ###   ########.fr        #
+#    Updated: 2018/11/19 17:08:51 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ LIBOBJ = $(LIBSRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(LIBOBJ)
-	@echo "$LFDF:$(GREEN)\tCompiling LIBFT...$(WHITE)"
+	@echo "$LLIBFT:$(GREEN)\tCompiling LIBFT...$(WHITE)"
 	@$(LC) $(NAME) $(LIBOBJ)
 	@echo "$LLIBFT:$(LGREEN)\tCompiled & libft.a ready for use.$(WHITE)"
 
