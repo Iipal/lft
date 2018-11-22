@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/11/21 16:46:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2018/11/22 10:19:46 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	isvalid(int c, int base)
 	valid_lower = ft_strdup("0123456789abcdef");
 	valid_upper = ft_strdup("0123456789ABCDEF");
 	while (base--)
-		if (digits[base] == c || digits2[base] == c)
+		if (valid_lower[base] == c || valid_upper[base] == c)
 			return (1);
 	return (0);
 }
