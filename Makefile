@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2018/10/30 17:22:11 by tmaluh           ###   ########.fr        #
+#    Updated: 2018/11/29 12:49:51 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libft.a
 CC = gcc -march=native
 LC = ar rc
 
-CFLAGS = -Wall -Wextra -Werror -Wno-unused-result -Ofast
+CFLAGS = -Wall -Wextra -Werror -Ofast
 
 WHITE=\033[0m
 GREEN=\033[32m
