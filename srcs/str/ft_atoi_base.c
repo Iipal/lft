@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/11/22 10:19:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2018/11/21 16:46:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@ static int	isvalid(int c, int base)
 {
 	char	*valid_lower;
 	char	*valid_upper;
+	int		is;
 
+	is = 0;
 	valid_lower = ft_strdup("0123456789abcdef");
 	valid_upper = ft_strdup("0123456789ABCDEF");
 	while (base--)
 		if (valid_lower[base] == c || valid_upper[base] == c)
-			return (1);
-	return (0);
+		{
+			is = 1;
+			break ;
+		}
+	ft_strdel(&valid_lower);
+	ft_strdel(&valid_upper);
+	return (is);
 }
 
 static int	value_of(int c)

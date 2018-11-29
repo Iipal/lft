@@ -20,7 +20,7 @@
 # include "lft_math.h"
 # include "lft_ctype.h"
 
-# define BUFF_SIZE	42
+# define BUFF_SIZE 2048
 
 int	ft_gnl(const int fd, char **line);
 
