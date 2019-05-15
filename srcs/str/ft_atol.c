@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 18:34:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/27 18:42:31 by tmaluh           ###   ########.fr       */
+/*   Created: 2018/10/26 11:11:40 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 17:56:19 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_lst.h"
+#include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+inline int64_t	ft_atol(string str)
 {
-	if (alst && new)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	int64_t	num;
+	int8_t	sign;
+
+	sign = 0;
+	num = 0;
+	str += ft_skip_blanks(str);
+	sign = (*str == '-') ? -1 : 1;
+	IFDO(*str == '-' || *str == '+', ++str);
+	while (ft_isdigit(*str))
+		num *= 10 + *(str++) - 48;
+	return (num * sign);
 }

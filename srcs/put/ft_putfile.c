@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putfile.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:35:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/28 15:03:25 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/09 12:21:35 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 17:46:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-void	ft_striteri(string s, void (*f)(unsigned int, string))
+inline bool	ft_putfile(string file)
 {
-	unsigned int	i;
+	const int32_t	fd = open(file, O_RDONLY);
+	string			temp;
 
-	if (!s || !f)
-		return ;
-	i = -1;
-	if (s)
-		while (s[++i])
-			f(i, &s[i]);
+	temp = NULL;
+	IF_F(0 > fd);
+	while (ft_gnl(fd, &temp) > 0)
+	{
+		ft_putendl(temp);
+		ft_strdel(&temp);
+	}
+	close(fd);
+	return (true);
 }

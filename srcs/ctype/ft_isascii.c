@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 10:08:07 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:27:38 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 17:48:29 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_ctype.h"
+#include "libft.h"
 
-int		ft_isascii(int c)
+inline bool	ft_isascii(const uchar c)
 {
-	return (c >= 0 && c < 128);
+	return (c < 128);
 }

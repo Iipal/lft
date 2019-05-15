@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_isdigits_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 10:33:21 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/29 10:52:18 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/13 20:10:53 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 17:31:44 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-int		ft_count_if(cstring str, char const ch)
+bool	ft_isdigits_str(const string str)
 {
-	int		counter;
-	int		i;
+	size_t	i;
 
-	i = -1;
-	counter = 0;
-	if (!str || !ch)
-		return (0);
-	while (str[++i] != '\0')
-		if (str[i] == ch)
-			counter++;
-	return (counter);
+	i = ~0L;
+	while (str[++i])
+		if (!ft_isdigit(str[i]))
+			return (false);
+	return (true);
 }

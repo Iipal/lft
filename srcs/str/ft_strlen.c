@@ -6,18 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 10:05:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:31:48 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 18:30:05 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-size_t	ft_strlen(cstring str)
+inline size_t	ft_strlen(cstring str)
 {
 	size_t	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
+	i = ~0L;
+	while (str[++i])
+		;
 	return (i);
 }

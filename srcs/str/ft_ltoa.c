@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_ltoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 10:33:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 18:32:24 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/04/04 01:29:04 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline string	ft_itoa(int32_t n)
+static int64_t	ft_slen(bool *sign, int64_t n)
 {
-	int32_t	len;
+	int64_t	out;
+
+	out = 1;
+	if (n < 0)
+		*sign = true;
+	while (n /= 10)
+		out++;
+	return (out);
+}
+
+string			ft_ltoa(int64_t n)
+{
+	int64_t	len;
 	string	out;
 	bool	sign;
 
@@ -24,10 +36,12 @@ inline string	ft_itoa(int32_t n)
 		out[0] = '0';
 		return (out);
 	}
-	sign = 0 > n ? true : false;
-	len = ft_digits(n);
-	NO_R(out = ft_strnew(len + sign), NULL);
-	IFDO(sign, *out = '-');
+	sign = false;
+	len = ft_slen(&sign, n);
+	if ((out = ft_strnew(len + sign)) == NULL)
+		return (NULL);
+	if (sign)
+		out[0] = '-';
 	while (len--)
 	{
 		out[len + sign] = (sign ? -(n % 10) : n % 10) + '0';

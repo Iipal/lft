@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lft_ctype.h                                        :+:      :+:    :+:   */
+/*   ft_strlwr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 09:29:06 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/11/15 09:29:08 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/05 12:08:57 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 18:34:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LFT_CTYPE_H
-# define LFT_CTYPE_H
+#include "libft.h"
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_islower(int c);
-int		ft_isupper(int c);
-int		ft_isblank(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+inline string	ft_strlwr(string str)
+{
+	size_t	i;
 
-#endif
+	i = ~0L;
+	while (str[++i])
+		str[i] = ft_tolower((uchar)(str[i]));
+	return (str);
+}

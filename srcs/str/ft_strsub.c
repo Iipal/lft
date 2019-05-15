@@ -6,36 +6,31 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 18:07:51 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/28 14:44:38 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 18:48:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-string	ft_strsub(char const *s, unsigned int start, size_t len)
+inline string	ft_strsub(char const *s, uint32_t start, size_t len)
 {
-	string			src;
-	string			out;
-	unsigned int	i;
-	unsigned int	j;
+	string	src;
+	string	out;
+	size_t	i;
+	size_t	j;
 
 	out = NULL;
-	if (s == NULL)
-		return (NULL);
-	if ((out = ft_strnew(len ? len : 1)) == NULL)
-		return (NULL);
-	if (len == 0)
+	NO_R(s, NULL);
+	NO_R(out = ft_strnew(len ? len : 1), NULL);
+	if (!len)
 	{
 		out[0] = '\0';
 		return (out);
 	}
 	src = (string)s;
-	i = start - 1;
-	j = -1;
-	while (++j < len)
-	{
-		++i;
-		out[j] = src[i];
-	}
+	i = start;
+	j = 0;
+	while (j < len)
+		out[j++] = src[i++];
 	return (out);
 }

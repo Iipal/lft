@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_skip_blanks.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:41:28 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:31:56 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/10 17:42:09 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/04/16 16:44:24 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-string	ft_strmap(char const *s, char (*f)(char))
+size_t	ft_skip_blanks(cstring str)
 {
-	string			src;
-	string			out;
-	unsigned int	len;
-	unsigned int	i;
+	size_t	i;
 
-	i = -1;
-	if (!s)
-		return (NULL);
-	src = (string)s;
-	len = ft_strlen(s);
-	if ((out = ft_strnew(len)) == NULL)
-		return (NULL);
-	while (s[++i])
-		out[i] = f(src[i]);
-	return (out);
+	i = 0;
+	while (str[i] && ft_isblank(str[i]))
+		++i;
+	return (i);
 }

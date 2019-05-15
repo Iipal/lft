@@ -6,106 +6,63 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2018/10/30 17:22:11 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/04/10 22:07:45 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME := libft.a
+NPWD := $(CURDIR)/$(NAME)
 
-CC = gcc -march=native
-LC = ar rc
+ECHO := echo
 
-CFLAGS = -Wall -Wextra -Werror -Wno-unused-result -Ofast
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	ECHO += -e
+	LC := gcc-ar
+endif
+ifeq ($(UNAME_S),Darwin)
+	LC := ar
+endif
 
-WHITE=\033[0m
-GREEN=\033[32m
-RED=\033[31m
+LC += rcs
 
-DEL = rm -rf
-# 69
-LIBSRC_CTYPE = srcs/ctype/ft_isalnum.c srcs/ctype/ft_isalpha.c srcs/ctype/ft_isascii.c \
-		srcs/ctype/ft_isblank.c srcs/ctype/ft_isdigit.c srcs/ctype/ft_islower.c \
-		srcs/ctype/ft_isprint.c srcs/ctype/ft_isupper.c srcs/ctype/ft_toupper.c \
-		srcs/ctype/ft_tolower.c
-LIBSRC_MEM = srcs/mem/ft_bzero.c srcs/mem/ft_memset.c srcs/mem/ft_memalloc.c \
-		srcs/mem/ft_memcpy.c srcs/mem/ft_memccpy.c srcs/mem/ft_memmove.c \
-		srcs/mem/ft_memchr.c srcs/mem/ft_memcmp.c srcs/mem/ft_memdel.c
-LIBSRC_PUT = srcs/put/ft_putchar.c srcs/put/ft_putchar_fd.c srcs/put/ft_putendl.c \
-		srcs/put/ft_putendl_fd.c srcs/put/ft_putnbr.c srcs/put/ft_putnbr_fd.c \
-		srcs/put/ft_putstr.c srcs/put/ft_putstr_fd.c
-LIBSRC_LST = srcs/lst/ft_lstadd.c srcs/lst/ft_lstdel.c srcs/lst/ft_lstdelone.c \
-		srcs/lst/ft_lstiter.c srcs/lst/ft_lstmap.c srcs/lst/ft_lstnew.c
-LIBSRC_STR = srcs/str/ft_atoi.c srcs/str/ft_atoi_base.c srcs/str/ft_count_if.c srcs/str/ft_itoa.c \
-		srcs/str/ft_strcat.c srcs/str/ft_strchr.c srcs/str/ft_strclr.c srcs/str/ft_strcmp.c \
-		srcs/str/ft_strcpy.c srcs/str/ft_strdel.c srcs/str/ft_strdup.c srcs/str/ft_strequ.c \
-		srcs/str/ft_striter.c srcs/str/ft_striteri.c srcs/str/ft_strjoin.c srcs/str/ft_strlcat.c \
-		srcs/str/ft_strlcpy.c srcs/str/ft_strlen.c srcs/str/ft_strmap.c srcs/str/ft_strmapi.c \
-		srcs/str/ft_strncat.c srcs/str/ft_strncmp.c srcs/str/ft_strncpy.c srcs/str/ft_strndup.c \
-		srcs/str/ft_strnequ.c srcs/str/ft_strnew.c srcs/str/ft_strnstr.c srcs/str/ft_strrchr.c \
-		srcs/str/ft_strsplit.c srcs/str/ft_strstr.c srcs/str/ft_strsub.c srcs/str/ft_strtrim.c
-LIBSRC_LFT = srcs/lft/ft_gnl.c
+CC := gcc -march=native -mtune=native -flto -Ofast
+CFLAGS := -Wall -Wextra -Werror -Wunused
+INC := -I $(CURDIR)/includes/
 
-LIBOBJ_STR = $(LIBSRC_STR:%.c=%.o)
-LIBOBJ_CTYPE = $(LIBSRC_CTYPE:%.c=%.o)
-LIBOBJ_MEM = $(LIBSRC_MEM:%.c=%.o)
-LIBOBJ_PUT = $(LIBSRC_PUT:%.c=%.o)
-LIBOBJ_LST = $(LIBSRC_LST:%.c=%.o)
-LIBOBJ_LFT = $(LIBSRC_LFT:%.c=%.o)
+SRC_D := srcs/
+SRCS := $(abspath $(wildcard $(SRC_D)/*/*.c))
+OBJS := $(SRCS:%.c=%.o)
+
+DEL := rm -rf
+
+WHITE := \033[0m
+GREEN := \033[32m
+RED := \033[31m
+INVERT := \033[7m
+
+SUCCESS = [$(GREEN)✓$(WHITE)]
 
 all: $(NAME)
 
-$(NAME): OUTPUT_STR OUTPUT_CTYPE OUTPUT_MEM OUTPUT_PUT OUTPUT_LST OUTPUT_LFT
-	@$(LC) $(NAME) $(LIBOBJ_CTYPE) $(LIBOBJ_MEM) $(LIBOBJ_PUT) $(LIBOBJ_LST) $(LIBOBJ_STR) $(LIBOBJ_LFT)
-	@echo "=>$(GREEN)$(WHITE)\t$(GREEN)libft$(WHITE) compiled."
+$(NAME): $(OBJS)
+	@$(ECHO) "$(INVERT)"
+	@$(ECHO) -n ' <=-=> | $(NPWD): '
+	@$(LC) $(NAME) $(OBJS)
+	@$(ECHO) "[$(GREEN)✓$(WHITE)$(INVERT)]$(WHITE)"
+	@$(ECHO)
 
-
-OUTPUT_STR: $(LIBOBJ_STR)
-	@echo "> done: $(GREEN)str$(WHITE) lib-part"
-$(LIBOBJ_STR): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
-
-OUTPUT_CTYPE: $(LIBOBJ_CTYPE)
-	@echo "> done: $(GREEN)ctype$(WHITE) lib-part"
-$(LIBOBJ_CTYPE): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
-
-OUTPUT_MEM: $(LIBOBJ_MEM)
-	@echo "> done: $(GREEN)memory$(WHITE) lib-part"
-$(LIBOBJ_MEM): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
-
-OUTPUT_PUT: $(LIBOBJ_PUT)
-	@echo "> done: $(GREEN)put$(WHITE) lib-part"
-$(LIBOBJ_PUT): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
-
-OUTPUT_LST: $(LIBOBJ_LST)
-	@echo "> done: $(GREEN)lst$(WHITE) lib-part"
-$(LIBOBJ_LST): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
-
-OUTPUT_LFT: $(LIBOBJ_LFT)
-	@echo "> done: $(GREEN)lft$(WHITE) lib-part"
-$(LIBOBJ_LFT): %.o: %.c
-	@echo -n '+'
-	@$(CC) -c $(CFLAGS) $< -o $@
+$(OBJS): %.o: %.c
+	@$(ECHO) -n ' $@: '
+	@$(CC) -c $(CFLAGS) $(INC) $< -o $@
+	@$(ECHO) "$(SUCCESS)"
 
 clean:
-	@$(DEL) $(LIBOBJ_STR)
-	@$(DEL) $(LIBOBJ_CTYPE)
-	@$(DEL) $(LIBOBJ_MEM)
-	@$(DEL) $(LIBOBJ_PUT)
-	@$(DEL) $(LIBOBJ_LST)
-	@$(DEL) $(LIBOBJ_LFT)
+	@$(DEL) $(OBJS)
 
 fclean: clean
 	@$(DEL) $(NAME)
-	@echo "$(RED)deleted$(WHITE): libft.a"
+	@$(ECHO) "$(INVERT)$(RED)deleted$(WHITE)$(INVERT): $(NPWD)$(WHITE)"
 
 re: fclean all
 

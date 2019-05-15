@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_skip_to_blank.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/27 18:15:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/27 18:31:32 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/16 16:43:28 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/04/17 12:36:09 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_lst.h"
-#include "../../includes/lft_mem.h"
+#include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+size_t	ft_skip_to_blank(cstring str)
 {
-	if (alst && del)
-	{
-		del((*alst)->content, (*alst)->content_size);
-		*alst = NULL;
-	}
+	size_t	i;
+
+	i = 0;
+	while (str[i] && !ft_isblank(str[i]))
+		++i;
+	return (i);
 }

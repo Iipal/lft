@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strupr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:30:32 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/28 15:12:12 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/05 12:08:57 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 18:34:45 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-void	ft_striter(string s, void (*f)(string))
+inline string	ft_strupr(string str)
 {
 	size_t	i;
 
-	if (!s || !f)
-		return ;
-	i = -1;
-	if (s)
-		while (s[++i])
-			f(&s[i]);
+	i = ~0L;
+	while (str[++i])
+		str[i] = ft_toupper((uchar)(str[i]));
+	return (str);
 }

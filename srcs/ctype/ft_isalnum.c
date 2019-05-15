@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 10:00:46 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:27:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 17:48:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_ctype.h"
+#include "libft.h"
 
-int		ft_isalnum(int c)
+inline bool	ft_isalnum(const uchar c)
 {
 	return (ft_isdigit(c) || ft_isalpha(c));
 }

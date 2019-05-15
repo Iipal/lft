@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strrepchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:53:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:32:06 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/02/14 11:20:28 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 17:53:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-string	ft_strmapi(char const *s, char (*f)(unsigned int, char))
+inline bool	ft_strrepchr(cstring str, const char search, const char replace)
 {
-	string			src;
-	string			out;
-	unsigned int	len;
-	unsigned int	i;
+	string ptr;
 
-	i = -1;
-	if (!s)
-		return (NULL);
-	src = (string)s;
-	len = ft_strlen(s);
-	if ((out = ft_strnew(len)) == NULL)
-		return (NULL);
-	while (s[++i])
-		out[i] = f(i, src[i]);
-	return (out);
+	NO_F(str);
+	ptr = (string)str;
+	while ((ptr = ft_strchr(ptr, search)))
+		*ptr++ = replace;
+	return (true);
 }

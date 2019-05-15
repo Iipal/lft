@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 11:14:14 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:35:38 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 17:49:50 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_ctype.h"
+#include "libft.h"
 
-int		ft_toupper(int c)
+inline uchar	ft_toupper(const uchar c)
 {
-	return ((c >= 'a' && c <= 'z') ? c -= 32 : c);
+	return (ft_islower(c) ? c - ' ' : c);
 }

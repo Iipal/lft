@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:21:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:27:03 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/15 18:51:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_mem.h"
+#include "libft.h"
 
-void	ft_bzero(pvoid s, size_t n)
+inline void	ft_bzero(pvoid s, const size_t n)
 {
 	ft_memset(s, 0, n);
 }

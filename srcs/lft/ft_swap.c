@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:55:16 by tmaluh            #+#    #+#             */
-/*   Updated: 2018/10/26 19:30:59 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/04/05 12:46:54 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/15 17:32:15 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/lft_str.h"
+#include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+inline void	ft_swap(int32_t *a, int32_t *b)
 {
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	return (!ft_strcmp(s1, s2) ? 1 : 0);
+	int32_t	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
