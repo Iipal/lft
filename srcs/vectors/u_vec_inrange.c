@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   u_vec_inrange.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/19 12:53:07 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/18 12:22:50 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/18 21:42:05 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ishex_str(const string str)
+inline bool	u_vec_range(Vector v,
+				const double_t max_range,
+				const double_t min_range)
 {
-	size_t			i;
-	size_t			j;
-	const string	valid_hex = "0123456789abcdef";
-	bool			is_valid;
-
-	i = ~0L;
-	while (str[++i] && (j = ~0L))
-	{
-		is_valid = false;
-		while (valid_hex[++j])
-			if (ft_tolower(str[i]) == valid_hex[j])
-				is_valid = true;
-		if (false == is_valid)
-			return (false);
-	}
+	if (max_range < X(v) || max_range < Y(v) || max_range < Z(v))
+		return (false);
+	if (min_range > X(v) || min_range > Y(v) || min_range > Z(v))
+		return (false);
 	return (true);
 }

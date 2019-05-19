@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   ft_ishex_strn.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/19 12:53:07 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/19 12:40:50 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/19 12:51:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ishex_str(const string str)
+bool	ft_ishex_strn(const string str, const size_t n)
 {
 	size_t			i;
 	size_t			j;
@@ -20,7 +20,7 @@ bool	ft_ishex_str(const string str)
 	bool			is_valid;
 
 	i = ~0L;
-	while (str[++i] && (j = ~0L))
+	while (n > ++i && str[i] && (j = ~0L))
 	{
 		is_valid = false;
 		while (valid_hex[++j])
