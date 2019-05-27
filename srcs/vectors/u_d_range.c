@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   u_d_range.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/20 12:15:19 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/18 17:56:24 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/27 16:05:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ishex_str(string str)
+inline double_t	u_d_range(double_t x,
+					const double_t max_range,
+					const double_t min_range)
 {
-	size_t			j;
-	const string	valid_hex = "0123456789abcdef";
-
-	while (*str && (j = ~0L))
-	{
-		while (valid_hex[++j])
-			if (ft_tolower(*str) == valid_hex[j])
-				break ;
-		if (ft_tolower(*str++) != valid_hex[j])
-			return (false);
-	}
-	return (true);
+	if (max_range < x)
+		return (max_range);
+	if (min_range > x)
+		return (min_range);
+	return (x);
 }

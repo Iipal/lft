@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 12:16:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/18 21:42:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/27 20:21:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 # include <math.h>
 # include <stdint.h>
+# include "libft_macroses.h"
 
-# define DOT typedef int32_t  Dot __attribute__((vector_size(16),aligned))
-# define VEC typedef double_t Vector __attribute__((vector_size(32),aligned))
+# define DOT  typedef int32_t  Dot __attribute__((vector_size(16),aligned))
+# define FDOT typedef double_t fDot __attribute__((vector_size(16),aligned))
+# define VEC  typedef double_t Vector __attribute__((vector_size(32),aligned))
 
 # define X(v) v[0]
 # define Y(v) v[1]
@@ -25,18 +27,31 @@
 # define W(v) v[3]
 
 DOT;
+FDOT;
 VEC;
 
-# define VLEN(v) sqrt(X(v) * X(v) + Y(v) * Y(v) + Z(v) * Z(v))
-# define VDOT(v1, v2) (X(v1) * X(v2) + Y(v1) * Y(v2) + Z(v1) * Z(v2))
-# define VNORM(v) X(v)/sqrt(VDOT(v,v)),Y(v)/sqrt(VDOT(v,v)),Z(v)/sqrt(VDOT(v,v))
-# define VMUL(v, d) (Vector){X(v) * d, Y(v) * d, Z(v) * d}
-# define VMULR(v, d) (Vector){d * X(v), d * Y(v), d * Z(v)}
 # define VDISC(k) (Y(k) * Y(k) - 4.0 * X(k) * Z(k))
 
 /*
 **	u_ prefix is short name for utils.
 */
+extern double_t	u_vlen(const Vector v);
+extern double_t	u_vdot(const Vector v1, const Vector v2);
+
+extern Vector	u_vnorm(const Vector v);
+
+extern Vector	u_vmuld(const Vector v, const double_t d);
+extern Vector	u_vaddd(const Vector v, const double_t d);
+extern Vector	u_vsubd(const Vector v, const double_t d);
+extern Vector	u_vdivd(const Vector v, const double_t d);
+
+extern Vector	u_vmulv(const Vector a, const Vector b);
+extern Vector	u_vaddv(const Vector a, const Vector b);
+extern Vector	u_vsubv(const Vector a, const Vector b);
+extern Vector	u_vdivv(const Vector a, const Vector b);
+
+extern Vector	u_vinvert(const Vector v);
+
 extern bool		u_vec_range(Vector v,
 					const double_t max_range,
 					const double_t min_range);

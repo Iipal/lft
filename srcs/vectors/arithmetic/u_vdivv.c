@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   u_vdivv.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/20 12:15:19 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/27 14:11:31 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/27 16:07:04 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_vectors.h"
 
-bool	ft_ishex_str(string str)
+inline Vector	u_vdivv(const Vector a, const Vector b)
 {
-	size_t			j;
-	const string	valid_hex = "0123456789abcdef";
+	const Vector	c = {X(a) / X(b), Y(a) / Y(b), Z(a) / Z(b), 0.0};
 
-	while (*str && (j = ~0L))
-	{
-		while (valid_hex[++j])
-			if (ft_tolower(*str) == valid_hex[j])
-				break ;
-		if (ft_tolower(*str++) != valid_hex[j])
-			return (false);
-	}
-	return (true);
+	return (c);
 }

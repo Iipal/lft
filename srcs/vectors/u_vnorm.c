@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   u_vnorm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/20 12:15:19 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/21 22:34:31 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/05/27 14:18:29 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ishex_str(string str)
+inline Vector	u_vnorm(const Vector v)
 {
-	size_t			j;
-	const string	valid_hex = "0123456789abcdef";
+	const double_t	sqrtvdv = sqrt(u_vdot(v, v));
+	const Vector	c = {X(v) / sqrtvdv, Y(v) / sqrtvdv, Z(v) / sqrtvdv, 0.0};
 
-	while (*str && (j = ~0L))
-	{
-		while (valid_hex[++j])
-			if (ft_tolower(*str) == valid_hex[j])
-				break ;
-		if (ft_tolower(*str++) != valid_hex[j])
-			return (false);
-	}
-	return (true);
+	return (c);
 }

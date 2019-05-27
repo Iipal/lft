@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/18 12:19:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/05/27 15:20:10 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define LIBFT_MACROSES_H
 
 # include <stdint.h>
+
+enum	e_bool {false, true} __attribute__((packed));
+
+# define BOOL typedef enum e_bool bool
+
+BOOL;
 
 /*
 **	ft_gnl reading buffer size.
@@ -29,6 +35,7 @@
 # define ISARGS(ac, av) {--ac;++av; IFM_F(E_USAGE, !ac);}
 
 # define IFR(ex, ret) if ((ex)) {return (ret);}
+# define IFMR(msg, ex, ret) if ((ex)) {MSGN(msg); return (ret);}
 # define IF_F(ex) if ((ex)) return (false);
 # define IFDO(ex, do) if ((ex)) {do;}
 # define IFDO_F(ex, do) if ((ex)) {do; return (false);}
@@ -71,13 +78,5 @@ IARR;
 ITAB;
 UIARR;
 UINT;
-
-enum	e_bool {false, true} __attribute__((packed));
-
-# define BOOL   typedef enum e_bool     bool
-# define FDOT   typedef double_t fDot __attribute__((vector_size(16),aligned))
-
-BOOL;
-FDOT;
 
 #endif
