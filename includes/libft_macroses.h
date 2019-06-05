@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/02 00:23:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/05 22:06:05 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BOOL;
 # define MSG(msg) ft_putstr_fd(msg, STDERR_FILENO)
 # define MSGN(msg) ft_putendl_fd(msg, STDERR_FILENO)
 
-# define ISARGS(ac, av) {--ac;++av; IFM_F(E_USAGE, !ac);}
+# define ISARGS(ac, av, usage_msg) {--ac;++av; IFM_F(usage_msg, !ac);}
 
 # define IFR(ex, ret) if ((ex)) {return (ret);}
 # define IFMR(msg, ex, ret) if ((ex)) {MSGN(msg); return (ret);}
