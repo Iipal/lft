@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/27 15:20:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/02 00:23:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ BOOL;
 
 # define IFR(ex, ret) if ((ex)) {return (ret);}
 # define IFMR(msg, ex, ret) if ((ex)) {MSGN(msg); return (ret);}
-# define IF_F(ex) if ((ex)) return (false);
+# define IF_F(ex) if ((ex)) {return (false);}
 # define IFDO(ex, do) if ((ex)) {do;}
 # define IFDO_F(ex, do) if ((ex)) {do; return (false);}
 # define IFDOM(msg, ex, do) if ((ex)) {MSGN(msg); do;}
@@ -46,14 +46,20 @@ BOOL;
 # define IFM_F(msg, ex) if ((ex)) {MSGN(msg); return (false);}
 
 # define NO(msg, ex, do, ret) if (!(ex)) {MSGN(msg); do; return(ret);}
-# define NO_R(ex, ret) if (!(ex)) return (ret)
-# define NO_F(ex) if (!(ex)) return (false)
+# define NO_R(ex, ret) if (!(ex)) {return (ret);}
+# define NO_F(ex) if (!(ex)) {return (false);}
 # define NODO(ex, do) if (!(ex)) {do;}
 # define NODO_F(ex, do) if (!(ex)) {do; return(false);}
 # define NOM_F(msg, ex) if (!(ex)) {MSGN(msg); return (false);}
+# define NOM_R(msg, ex, ret) if (!(ex)) {MSGN(msg); return (ret);}
 
-# define C(type, dest, x) ft_bzero(dest, sizeof(type) * (x))
-# define MEM(t, d, x, m) NO(m,d=(t*)malloc(sizeof(t)*(x)),exit(1),0);C(t,d,x)
+# define SWAP(a, b) {typeof (a) _a = (a); (a) = (b); (b) = _a;}
+
+# define SIZEOF(type, x) (sizeof(type) * (x))
+
+# define ZERO(type, dest, x) ft_bzero(dest, SIZEOF(type,x))
+# define MALLOC(dest, type, x) (dest) = (type*)malloc(SIZEOF(type, x))
+# define MEM(t, d, x, m) {NO(m,MALLOC(d,t,x),exit(1),0);ZERO(t,d,x);}
 
 # define FREE(trash, del) if ((trash)) {del((trash)); (trash) = NULL;}
 

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/20 12:17:09 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/02 00:26:28 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ bool	ft_isdigits_str(const string str);
 bool	ft_ishex_str(string str);
 
 /*
+**	\return true is \param str contain only hex digits or false if not.
+*/
+bool	ft_isalpha_str(string str);
+
+/*
 **	\return true if \param n symbols in string \param str
 **		contains only hex digits or false if not.
 */
@@ -84,15 +89,5 @@ size_t	ft_skip_blanks(const string str);
 **	\return How many symbols to first blank symbol in string \param str.
 */
 size_t	ft_skip_to_blank(const string str);
-
-/*
-**	Swap int32_t values.
-*/
-void	ft_swap(int32_t *a, int32_t *b);
-
-/*
-**	Swap char values.
-*/
-void	ft_cwap(char *a, char *b);
 
 #endif
