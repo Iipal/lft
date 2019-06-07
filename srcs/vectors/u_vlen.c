@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:31:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/28 09:55:29 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 18:32:55 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_vectors.h"
 
-inline double_t	u_vlen(const Vector v)
+inline double_t	u_vlen(const __v4df v)
 {
 	return (sqrt(u_vdot(v, v)));
 }
