@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 12:16:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 19:50:22 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 19:13:42 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,37 @@
 
 # include <math.h>
 # include <stdint.h>
+# include <immintrin.h>
 # include "libft_macroses.h"
-
-# define DOT  typedef int32_t  Dot __attribute__((vector_size(8),aligned))
-# define FDOT typedef double_t fDot __attribute__((vector_size(16),aligned))
-# define VEC  typedef double_t Vector __attribute__((vector_size(32),aligned))
 
 # define X(v) v[0]
 # define Y(v) v[1]
 # define Z(v) v[2]
 # define W(v) v[3]
 
-DOT;
-FDOT;
-VEC;
-
 # define VDISC(a, b, c) ((b) * (b) - 4.0 * (a) * (c))
 
 /*
 **	u_ prefix is short name for utils.
 */
-extern double_t	u_vlen(const Vector v);
-extern double_t	u_vdot(const Vector v1, const Vector v2);
+extern double_t	u_vlen(const __v4df v);
+extern double_t	u_vdot(const __v4df v1, const __v4df v2);
 
-extern Vector	u_vnorm(const Vector v);
+extern __v4df	u_vnorm(const __v4df v);
 
-extern Vector	u_vmuld(const Vector v, const double_t d);
-extern Vector	u_vaddd(const Vector v, const double_t d);
-extern Vector	u_vsubd(const Vector v, const double_t d);
-extern Vector	u_vdivd(const Vector v, const double_t d);
+extern __v4df	u_vmuld(const __v4df v, const double_t d);
+extern __v4df	u_vaddd(const __v4df v, const double_t d);
+extern __v4df	u_vsubd(const __v4df v, const double_t d);
+extern __v4df	u_vdivd(const __v4df v, const double_t d);
 
-extern Vector	u_vmulv(const Vector a, const Vector b);
-extern Vector	u_vaddv(const Vector a, const Vector b);
-extern Vector	u_vsubv(const Vector a, const Vector b);
-extern Vector	u_vdivv(const Vector a, const Vector b);
+extern __v4df	u_vmulv(const __v4df a, const __v4df b);
+extern __v4df	u_vaddv(const __v4df a, const __v4df b);
+extern __v4df	u_vsubv(const __v4df a, const __v4df b);
+extern __v4df	u_vdivv(const __v4df a, const __v4df b);
 
-extern Vector	u_vinvert(const Vector v);
+extern __v4df	u_vinvert(const __v4df v);
 
-extern bool		u_vec_range(Vector v,
+extern bool		u_vec_range(__v4df v,
 					const double_t max_range,
 					const double_t min_range);
 extern bool		u_isd_range(double_t a,
