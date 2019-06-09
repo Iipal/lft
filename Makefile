@@ -6,18 +6,15 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/05 11:29:33 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/06/09 04:41:56 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
 NPWD := $(CURDIR)/$(NAME)
 
-ECHO := echo
-
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-	ECHO += -e
 	LC := gcc-ar
 endif
 ifeq ($(UNAME_S),Darwin)
@@ -47,36 +44,36 @@ SUCCESS = [$(GREEN)✓$(WHITE)]
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(ECHO) "$(INVERT)"
-	@$(ECHO) -n ' <=-=> | $(NPWD): '
+	@echo "$(INVERT)"
+	@echo -n ' <=-=> | $(NPWD): '
 	@$(LC) $(NAME) $(OBJS)
-	@$(ECHO) "[$(GREEN)✓$(WHITE)$(INVERT)]$(WHITE)"
-	@$(ECHO)
+	@echo "[$(GREEN)✓$(WHITE)$(INVERT)]$(WHITE)"
+	@echo
 
 $(OBJS): %.o: %.c
-	@$(ECHO) -n ' $@: '
+	@echo -n ' $@: '
 	@$(CC) -c $(CFLAGS) $(INC) $< -o $@
-	@$(ECHO) "$(SUCCESS)"
+	@echo "$(SUCCESS)"
 
 del:
 	@$(DEL) $(OBJS)
 	@$(DEL) $(NAME)
 pre: del $(NAME)
-	@$(ECHO) "$(INVERT)$(GREEN)Successed re-build.$(WHITE)"
+	@echo "$(INVERT)$(GREEN)Successed re-build.$(WHITE)"
 set_cc_debug:
 	@$(eval CC=$(CC_DEBUG))
 debug: set_cc_debug pre
-	@$(ECHO) "$(INVERT)$(GREEN)Ready for debug.$(WHITE)"
+	@echo "$(INVERT)$(GREEN)Ready for debug.$(WHITE)"
 
 clean:
 	@$(DEL) $(OBJS)
 
 fclean: clean
 	@$(DEL) $(NAME)
-	@$(ECHO) "$(INVERT)$(RED)deleted$(WHITE)$(INVERT): $(NPWD)$(WHITE)"
+	@echo "$(INVERT)$(RED)deleted$(WHITE)$(INVERT): $(NPWD)$(WHITE)"
 
 norme:
-	@$(ECHO) "$(INVERT)norminette for $(GREEN)$(NAME)$(WHITE)$(INVERT):$(WHITE)"
+	@echo "$(INVERT)norminette for $(GREEN)$(NAME)$(WHITE)$(INVERT):$(WHITE)"
 	@norminette includes/
 	@norminette $(SRCS)
 

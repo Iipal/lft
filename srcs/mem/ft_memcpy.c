@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:04:50 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:23:47 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ pvoid	ft_memcpy(pvoid dest, const pvoid src, const size_t n)
 	string	dst;
 	string	sc;
 
-	i = ~0L;
+	i = ~0UL;
 	sc = (string)src;
 	dst = (string)dest;
 	while (++i < n)

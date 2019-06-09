@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 20:10:53 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:31:44 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	ft_isdigits_str(const string str)
 {
 	size_t	i;
 
-	i = ~0L;
+	i = ~0UL;
 	while (str[++i])
 		if (!ft_isdigit(str[i]))
 			return (false);

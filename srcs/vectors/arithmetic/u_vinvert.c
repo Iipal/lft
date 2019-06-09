@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:22:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 18:40:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 05:01:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_vectors.h"
 
-inline __v4df	u_vinvert(const __v4df v)
+inline t_v4df	u_vinvert(const t_v4df v)
 {
-	const __v4df	out = {-X(v), -Y(v), -Z(v), 0.0};
+	const t_v4df	out = {-X(v), -Y(v), -Z(v), 0.0};
 
 	return (out);
 }

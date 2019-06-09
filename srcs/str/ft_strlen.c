@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 10:05:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:10:20 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlen(const string str)
 {
 	size_t	i;
 
-	i = ~0L;
+	i = ~0UL;
 	while (str[++i])
 		;
 	return (i);

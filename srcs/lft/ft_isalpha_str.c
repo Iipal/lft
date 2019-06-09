@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 00:07:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/31 00:08:58 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	ft_isalpha_str(string str)
 {
 	size_t	i;
 
-	i = ~0L;
+	i = ~0UL;
 	while (str[++i])
 		if (!ft_isalpha(str[i]))
 			return (false);
