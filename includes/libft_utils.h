@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/02 00:26:28 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 14:18:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool	ft_is_one_of_n(int64_t cmp, size_t n, ...);
 **	\param ...: va_list.
 **	\return true if one of argument is equal to \param cmp, else - false.
 */
-bool	ft_is_one_of_str(const string cmp, const bool cmp_len, size_t n, ...);
+size_t	ft_is_one_of_str(const string cmp, const bool cmp_len, size_t n, ...);
 
 /*
 **	\return How many digits in \param n.
