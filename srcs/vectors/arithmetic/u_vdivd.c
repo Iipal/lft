@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:04:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 18:39:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 05:01:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_vectors.h"
 
-inline __v4df	u_vdivd(const __v4df v, const double_t d)
+inline t_v4df	u_vdivd(const t_v4df v, const double_t d)
 {
-	const __v4df	out = {X(v) / d, Y(v) / d, Z(v) / d, 0.0};
+	const t_v4df	out = {X(v) / d, Y(v) / d, Z(v) / d, 0.0};
 
 	return (out);
 }

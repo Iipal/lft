@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 19:01:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int32_t	catline_recursive(int32_t fd, string *data,
 	size_t	to_nl;
 	string	temp_nl;
 
-	to_nl = ~0L;
+	to_nl = ~0UL;
 	while (data[fd][++to_nl] && data[fd][to_nl] != '\n')
 		;
 	if (data[fd][to_nl] == '\n')

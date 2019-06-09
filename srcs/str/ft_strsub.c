@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 18:07:51 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:20:44 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ string	ft_strsub(char const *s, const size_t start, const size_t len)
 	}
 	src = (string)s;
 	i = start;
-	j = ~0L;
+	j = ~0UL;
 	while (++j < len)
 		out[j] = src[i++];
 	return (out);

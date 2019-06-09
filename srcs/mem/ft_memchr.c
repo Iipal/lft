@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:04:22 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:25:16 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ pvoid	ft_memchr(const pvoid s, const uchar c, size_t n)
 	ustring			out;
 	size_t			i;
 
-	i = ~0L;
+	i = ~0UL;
 	out = (ustring)s;
 	while (n--)
 		if (out[++i] == c)
