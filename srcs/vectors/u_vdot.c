@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:17:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 05:01:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 05:14:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline double_t	u_vdot(const t_v4df v1, const t_v4df v2)
+inline double_t	u_vdot(const __v4df v1, const __v4df v2)
 {
 	return (X(v1) * X(v2) + Y(v1) * Y(v2) + Z(v1) * Z(v2));
 }

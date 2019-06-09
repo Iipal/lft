@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:29:43 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 05:01:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 05:14:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_vectors.h"
 
-inline t_v4df	u_vmuld(const t_v4df v, const double_t d)
+inline __v4df	u_vmuld(const __v4df v, const double_t d)
 {
-	const t_v4df	out = {X(v) * d, Y(v) * d, Z(v) * d, 0.0};
+	const __v4df	out = {X(v) * d, Y(v) * d, Z(v) * d, 0.0};
 
 	return (out);
 }
