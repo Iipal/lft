@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/10 19:07:22 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/10 20:10:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ size_t	ft_fdigits_str(string str);
 */
 bool	ft_isdigits_str(const string str);
 
+/*
+**	\return true is \param str contain only digits and valid float value
+**	 or false if not.
+*/
+bool	ft_isfdigits_str(const string str);
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
