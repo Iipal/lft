@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/10 10:33:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/10 19:07:22 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ size_t	ft_is_one_of_str(const string cmp, const bool cmp_len, size_t n, ...);
 **	\return How many digits in \param n.
 */
 size_t	ft_digits(int64_t n);
+
+/*
+**	\return How many digits in \param str.
+**	If in string exist mantissa(data after .(dot) and actually .(dot))
+**	 the function will return number of digits including this .(dot).
+*/
+size_t	ft_fdigits_str(string str);
 
 /*
 **	\return true is \param str contain only digits or false if not.
