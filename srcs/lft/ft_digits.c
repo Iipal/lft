@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 17:45:30 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 18:17:12 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/10 10:33:21 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline size_t	ft_digits(int32_t n)
+inline size_t	ft_digits(int64_t n)
 {
 	size_t	out;
 

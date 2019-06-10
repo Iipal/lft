@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 14:18:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/10 10:33:30 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ size_t	ft_is_one_of_str(const string cmp, const bool cmp_len, size_t n, ...);
 /*
 **	\return How many digits in \param n.
 */
-size_t	ft_digits(int32_t n);
+size_t	ft_digits(int64_t n);
 
 /*
 **	\return true is \param str contain only digits or false if not.
