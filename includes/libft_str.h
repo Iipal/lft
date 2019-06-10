@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:29:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/10 17:03:46 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,18 @@ bool	ft_strrepchr(const string str,
 			const char replace);
 
 /*
-**	Convert string \param str to int32_t number.
+**	Convert string \param str to int32_t type.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string.
 */
 int32_t	ft_atoi(string str);
+
+/*
+**	Convert string \param str ti double type.
+**	\return 0.0 if string \param str is invalid,
+**	 else - number which contained in string
+*/
+double	ft_atof(string str);
 
 /*
 **	Convert string \param str to int64_t number.
