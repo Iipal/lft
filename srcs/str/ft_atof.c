@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:03:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/10 20:35:42 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/11 09:31:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ double_t		ft_atof(string str)
 	mantissa = 0;
 	mantissa_digits = 0;
 	sign = ('-' == *str) ? -1 : 1;
-	('-' == *str) ? ++str : str;
+	((!exp) && (-1 == sign)) ? ++str : str;
 	str += ft_digits(exp);
 	if ('.' == *str)
 	{
