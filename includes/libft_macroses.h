@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 22:06:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:19:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 # define LIBFT_MACROSES_H
 
 # include <stdint.h>
-
-enum	e_bool {false, true} __attribute__((packed));
-
-# define BOOL typedef enum e_bool bool
-
-BOOL;
+# include <stdbool.h>
 
 /*
 **	ft_gnl reading buffer size.
