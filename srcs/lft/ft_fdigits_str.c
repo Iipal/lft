@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:41:00 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/11 09:35:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/13 09:17:03 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ size_t	ft_fdigits_str(string str)
 
 	i = ~0UL;
 	mantissa = 0;
+	mantissa_digits = 0;
 	sign = ('-' == *str) ? true : false;
 	(!exp && sign) ? ++str : str;
-	mantissa_digits = 0;
 	str += ft_digits(exp);
-	if ('.' == *str)
+	if ('.' == *(str++))
 	{
-		++str;
 		while (str[++i] && ft_isdigit(str[i]))
 			++mantissa_digits;
 		mantissa = ft_atol(str);
@@ -36,8 +35,8 @@ size_t	ft_fdigits_str(string str)
 			mantissa_digits = 0;
 		else
 			mantissa_digits -= ft_digits(mantissa);
-		return (ft_digits(exp) + ft_digits(mantissa) + mantissa_digits + 1
-			+ (!exp && sign ? 1 : 0));
+		return (ft_digits(exp) + ft_digits(mantissa) + mantissa_digits
+			+ 1 + (!exp && sign ? 1 : 0));
 	}
 	return (ft_digits(exp) + (!exp && sign ? 1 : 0));
 }
