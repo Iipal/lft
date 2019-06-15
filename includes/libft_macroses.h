@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/12 17:41:17 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/15 09:34:49 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@
 # define FREE(trash, del) if ((trash)) {del((trash)); (trash) = NULL;}
 
 # define ABS(var) ((var) < 0) ? -(var) : (var)
+# define MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+# define TO_STR_LITERAL(str) #str
 
 # define STR    typedef char*           string
 # define USTR   typedef unsigned char*  ustring
