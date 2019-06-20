@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/20 10:15:11 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/21 00:23:59 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,17 @@ size_t	ft_strlcat(string dest, const string src, size_t dstsize);
 */
 size_t	ft_strlcpy(string dest, const string str, const size_t dstsize);
 
+string	ft_i128toa(__int128 n);
+
 /*
 **	\return convert number \param n to string.
 */
 string	ft_itoa(int32_t n);
+
+/*
+**	\return convert number \param n to string in \param base number system.
+*/
+string	ft_ltoa_base(int64_t value, uint8_t base);
 
 /*
 **	\return converted string \str alphabet symbols to lower case.

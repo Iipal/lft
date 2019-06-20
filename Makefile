@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/13 10:03:03 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/06/20 23:55:29 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG -fsanitize=address
 CFLAGS := -Wall -Wextra -Werror -Wunused
 INC := -I $(CURDIR)/includes/
 
-SRC_D := srcs/
 SRCS := $(abspath $(wildcard srcs/*/*.c srcs/*/*/*.c))
 OBJS := $(SRCS:%.c=%.o)
 
