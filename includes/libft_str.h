@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/10 20:10:45 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/20 10:15:11 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ int32_t	ft_atoi_base(string str, int8_t base);
 **	Compare string \param s1 with \param s2.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-uchar	ft_strcmp(string s1, string s2);
+int		ft_strcmp(string s1, string s2);
 
 /*
 **	Compare string \param s1 with \param s2 by \param n symbols.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-uchar	ft_strncmp(string s1, string s2, size_t n);
+int		ft_strncmp(string s1, string s2, size_t n);
 
 /*
 **	\return lenght of string \param str.
