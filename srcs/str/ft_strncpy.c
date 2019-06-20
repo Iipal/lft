@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:45:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:13:04 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/20 16:28:30 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ string	ft_strncpy(string dest, string str, size_t len)
 
 	temp = dest;
 	while (len--)
-		if (*str)
+		if (!*str)
 			*temp++ = 0;
 		else
 			*temp++ = *str++;
