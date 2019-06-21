@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:02:54 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 12:58:38 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/21 20:57:04 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 **	Put \param c char to stdout.
 */
 void	ft_putchar(const uchar c);
+
+/*
+**	Put \param c char to stdout by \param n times.
+*/
+void	ft_putnchar(const uchar c, size_t n);
 
 /*
 **	Put \param s string to stdout.
