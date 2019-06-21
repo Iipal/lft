@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:07:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/21 00:28:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/21 08:55:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static inline void	add_aux(const int64_t n, const int64_t b,
 	out[(*p)++] = base[ABS(n % b)];
 }
 
-string		ft_itoa_base(int64_t value, uint8_t base)
+string		ft_ltoa_base(int64_t value, uint8_t base)
 {
 	string	out;
 	int64_t	p;
