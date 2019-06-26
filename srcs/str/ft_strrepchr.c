@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 11:20:28 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:08:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/23 12:08:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ bool	ft_strrepchr(const string str,
 {
 	string ptr;
 
-	NO_F(str);
+	if (!str)
+		return (false);
 	ptr = (string)str;
 	while ((ptr = ft_strchr(ptr, search)))
 		*ptr++ = replace;
