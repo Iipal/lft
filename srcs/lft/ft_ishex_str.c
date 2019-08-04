@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:51:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 13:17:59 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ bool	ft_ishex_str(char *str)
 		while (valid_hex[++i])
 			if (F_TOLOWER(*str) == valid_hex[i])
 				break ;
-		if (F_TOLOWER(*str++) != valid_hex[i])
+		if (F_TOLOWER(*str) != valid_hex[i])
 			return (false);
+		++str;
 	}
 	return (true);
 }
