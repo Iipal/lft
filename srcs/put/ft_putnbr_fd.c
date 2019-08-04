@@ -6,30 +6,31 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:45:17 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:45:59 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:58:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putnbr_fd(int32_t n, const int32_t fd)
+void	ft_putnbr_fd(int32_t n, int32_t const fd)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n == 2147483647)
-		ft_putstr_fd("2147483647", fd);
-	else
+	size_t	n_len;
+	char	tmp[24];
+	bool	is_neg;
+
+	is_neg = false;
+	n_len = ft_digits(n);
+	ft_bzero(tmp, sizeof(tmp));
+	if (0L > n)
 	{
-		if (n < 0)
-		{
-			ft_putchar_fd('-', fd);
-			n = -n;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr_fd(n / 10, fd);
-			ft_putchar_fd(n % 10 + '0', fd);
-		}
-		IFDO(10 > n, ft_putchar_fd(n % 10 + '0', fd));
+		tmp[is_neg++] = '-';
+		n = -n;
 	}
+	while (is_neg != n_len--)
+	{
+		tmp[n_len] = (n % 10L) + 0x30L;
+		if (n)
+			n /= 10L;
+	}
+	ft_putstr_fd(tmp, fd);
 }

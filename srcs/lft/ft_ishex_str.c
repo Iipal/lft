@@ -6,23 +6,25 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:00:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_ishex_str(string str)
+bool	ft_ishex_str(char *str)
 {
-	size_t			j;
-	const string	valid_hex = "0123456789abcdef";
+	size_t		i;
+	char const	valid_hex[] = "0123456789abcdef";
 
-	while (*str && (j = ~0UL))
+	i = 0UL;
+	while (str && *str)
 	{
-		while (valid_hex[++j])
-			if (ft_tolower(*str) == valid_hex[j])
+		i = ~0UL;
+		while (valid_hex[++i])
+			if (ft_tolower(*str) == valid_hex[i])
 				break ;
-		if (ft_tolower(*str++) != valid_hex[j])
+		if (ft_tolower(*str++) != valid_hex[i])
 			return (false);
 	}
 	return (true);

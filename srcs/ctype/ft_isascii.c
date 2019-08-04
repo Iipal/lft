@@ -6,13 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 10:08:07 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:48:29 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:30:35 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline bool	ft_isascii(const uchar c)
+bool	ft_isascii(char const c)
 {
-	return (c < 128);
+	int32_t const cc = (int32_t)c;
+	return (cc >= 0 && cc <= 127);
 }

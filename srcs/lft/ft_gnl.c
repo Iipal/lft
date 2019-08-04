@@ -6,17 +6,17 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 00:57:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int32_t	catline_recursive(int32_t fd, string *data,
-								string *line, ssize_t nbytes)
+static int32_t	catline_recursive(int32_t const fd, char **data,
+								char **line, ssize_t nbytes)
 {
 	size_t	to_nl;
-	string	temp_nl;
+	char	*temp_nl;
 
 	to_nl = ~0UL;
 	while (data[fd][++to_nl] && data[fd][to_nl] != '\n')
@@ -38,12 +38,12 @@ static int32_t	catline_recursive(int32_t fd, string *data,
 	return (1);
 }
 
-int8_t			ft_gnl(const int32_t fd, string *line)
+int8_t			ft_gnl(int32_t const fd, char **line)
 {
-	static string	data[255];
-	string			temp;
-	char			buff[BUFF_SIZE + 1];
-	ssize_t			nbytes;
+	static char	*data[255];
+	char		*temp;
+	char		buff[BUFF_SIZE + 1];
+	ssize_t		nbytes;
 
 	IFR(0 > fd || !line, -1);
 	while (0 < (nbytes = read(fd, buff, BUFF_SIZE)))

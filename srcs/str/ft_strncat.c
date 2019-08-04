@@ -6,20 +6,20 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:43:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:33:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-string	ft_strncat(string dest, const string src, const size_t n)
+char	*ft_strncat(char *dest, char const *const src, size_t const n)
 {
-	const size_t	i = ft_strlen(dest);
-	size_t			j;
+	size_t const	dest_len = ft_strlen(dest);
+	size_t			i;
 
-	j = ~0UL;
-	while (src[++j] && j < n)
-		dest[i + j] = src[j];
-	dest[i + j] = '\0';
+	i = ~0UL;
+	while (src[++i] && n > i)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
 	return (dest);
 }

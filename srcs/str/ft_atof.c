@@ -6,46 +6,45 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:03:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/13 09:17:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:26:47 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static double_t	add_mnts_delimeter(size_t mnts_digits)
+static double_t	add_mnt_delimeter(size_t mnt_digits)
 {
 	double_t	out;
 
 	out = 1.0f;
-	while (mnts_digits--)
+	while (mnt_digits--)
 		out *= 10.0f;
 	return (out);
 }
 
-double_t		ft_atof(string str)
+double_t		ft_atof(char const *str)
 {
 	const int64_t	exp = ft_atol(str);
-	int64_t			mnts;
-	size_t			mnts_digits;
-	int8_t			sign;
+	int64_t			mnt;
+	size_t			mnt_digits;
 	size_t			i;
+	double			s;
 
 	i = ~0UL;
-	mnts = 0;
-	mnts_digits = 0;
-	sign = ('-' == *str) ? -1 : 1;
-	((!exp) && (-1 == sign)) ? ++str : str;
+	mnt = 0;
+	mnt_digits = 0;
+	s = ('-' == *str) ? -1.0 : 1.0;
+	((!exp) && (-1 == s)) ? ++str : str;
 	str += ft_digits(exp);
 	if ('.' == *str++)
 	{
 		while (str[++i] && ft_isdigit(str[i]))
-			++mnts_digits;
-		mnts = ft_atol(str);
-		if (mnts_digits <= ft_digits(mnts))
-			mnts_digits = 0;
+			++mnt_digits;
+		mnt = ft_atol(str);
+		if (ft_digits(mnt) > mnt_digits)
+			mnt_digits = 0;
 		else
-			mnts_digits -= ft_digits(mnts);
+			mnt_digits -= ft_digits(mnt);
 	}
-	return (exp + (mnts
-		/ add_mnts_delimeter(ft_digits(mnts) + mnts_digits) * sign));
+	return (exp + (mnt / add_mnt_delimeter(ft_digits(mnt) + mnt_digits) * s));
 }

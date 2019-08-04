@@ -6,18 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 12:08:57 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:07:53 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-string	ft_strupr(string str)
+char	*ft_strupr(char *str)
 {
 	size_t	i;
 
 	i = ~0UL;
 	while (str[++i])
-		str[i] = ft_toupper((uchar)(str[i]));
+		str[i] = F_TOUPPER(str[i]);
 	return (str);
 }

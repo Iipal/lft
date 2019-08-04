@@ -6,17 +6,17 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:17:58 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:25:06 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 02:06:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-pvoid	ft_memset(pvoid dest, const int32_t c, size_t len)
+void	*ft_memset(void *const dest, int32_t const c, size_t len)
 {
-	ustring	out;
+	uint8_t	*out;
 
-	out = (ustring)dest;
+	out = (uint8_t*)dest;
 	while (len--)
 		*out++ = c;
 	return (dest);

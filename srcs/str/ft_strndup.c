@@ -6,20 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 19:01:32 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:12:06 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline string	ft_strndup(const string src, const size_t n)
+char	*ft_strndup(char const *const src, size_t const n)
 {
-	string	out;
-	size_t	i;
-
-	i = ~0UL;
-	NO_R(out = ft_strnew(n), NULL);
-	while (src[++i] && i < n)
-		out[i] = src[i];
-	return (out);
+	return (ft_strncpy(ft_strnew(n), src, n));
 }

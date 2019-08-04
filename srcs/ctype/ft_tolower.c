@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 11:21:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:51:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:05:04 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline uchar	ft_tolower(const uchar c)
+char	ft_tolower(char const c)
 {
 	return (ft_isupper(c) ? (c + ' ') : c);
 }

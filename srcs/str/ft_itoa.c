@@ -6,32 +6,28 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 10:33:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:06:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:02:40 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_str.h"
+#include "libft_utils.h"
 
-string	ft_itoa(int32_t n)
+char	*ft_itoa(int32_t n)
 {
+	char	*out;
 	int32_t	len;
-	string	out;
 	bool	sign;
 
-	if (!n)
-	{
-		out = ft_strnew(1);
-		out[0] = '0';
-		return (out);
-	}
 	sign = 0 > n ? true : false;
 	len = ft_digits(n);
-	NO_R(out = ft_strnew(len + sign), NULL);
-	IFDO(sign, *out = '-');
+	if (!(out = ft_strnew(len)))
+		return (out);
 	while (len--)
 	{
-		out[len + sign] = (sign ? -(n % 10) : n % 10) + '0';
-		n /= 10;
+		out[len] = (sign ? -(n % 0xA) : n % 0xA) + 0x30;
+		n /= 0xA;
 	}
+	*out = sign ? '-' : *out;
 	return (out);
 }

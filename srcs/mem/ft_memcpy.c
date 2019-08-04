@@ -6,21 +6,21 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:04:50 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 02:08:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-pvoid	ft_memcpy(pvoid dest, const pvoid src, const size_t n)
+void	*ft_memcpy(void *const dest, void const *const src, size_t const n)
 {
+	int8_t	*dst;
+	int8_t	*sc;
 	size_t	i;
-	string	dst;
-	string	sc;
 
+	dst = (int8_t*)dest;
+	sc = (int8_t*)src;
 	i = ~0UL;
-	sc = (string)src;
-	dst = (string)dest;
 	while (++i < n)
 		dst[i] = sc[i];
 	return (dest);

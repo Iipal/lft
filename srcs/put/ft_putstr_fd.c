@@ -6,18 +6,17 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:39:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:56:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putstr_fd(char const *s, int32_t fd)
+void	ft_putstr_fd(char const *const s, int32_t const fd)
 {
 	size_t	i;
 
 	i = ~0UL;
-	if (NULL != s)
-		while (s[++i])
-			ft_putchar_fd(s[i], fd);
+	while (s && s[++i])
+		F_PUTCHAR_FD(s[i], fd);
 }

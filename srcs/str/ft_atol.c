@@ -6,23 +6,23 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 11:11:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:09:11 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 10:28:43 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int64_t	ft_atol(string str)
+int64_t	ft_atol(char const *str)
 {
 	int64_t	num;
-	int8_t	sign;
+	int64_t	sign;
 
-	sign = 0;
-	num = 0;
 	str += ft_skip_blanks(str);
-	sign = (*str == '-') ? -1 : 1;
-	IFDO(*str == '-' || *str == '+', ++str);
-	while (ft_isdigit(*str))
-		num = num * 10 + *(str++) - 48;
+	num = 0L;
+	sign = ('-' == *str) ? -1L : 1L;
+	if ('-' == *str || '+' == *str)
+		++str;
+	while (F_ISDIGIT(*str))
+		num = num * 0xAL + *(str++) - 0x30L;
 	return (num * sign);
 }

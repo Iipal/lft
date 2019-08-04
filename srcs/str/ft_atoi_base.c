@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:09:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 10:36:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static inline bool	add_isvalid(const uchar c, int8_t base, const string valid)
+static bool	add_is_valid(char const c, int8_t base, char const valid[])
 {
 	while (base--)
 		if (valid[base] == ft_tolower(c))
@@ -20,25 +20,32 @@ static inline bool	add_isvalid(const uchar c, int8_t base, const string valid)
 	return (false);
 }
 
-static inline uchar	add_value_of(uint8_t c)
+static char	add_value_of(uint8_t c)
 {
-	IFR(ft_isdigit(c), c - '0');
-	IFR(ft_islower(c), c - 'a' + 10);
-	IFR(ft_isupper(c), c - 'A' + 10);
-	return (0);
+	char	out;
+
+	out = 0;
+	if (F_ISDIGIT(c))
+		out = c - 0x30;
+	else if (F_ISLOWER(c))
+		out = c - 0x61 + 0xA;
+	else if (F_ISUPPER(c))
+		out = c - 0x41 + 0xA;
+	return (out);
 }
 
-int32_t				ft_atoi_base(string str, int8_t base)
+int32_t		ft_atoi_base(char const *str, int8_t const base)
 {
-	int32_t			num;
-	int8_t			sign;
-	const string	valid_hex = "0123456789abcdef";
+	int32_t		num;
+	int8_t		sign;
+	char const	valid_hex[] = "0123456789abcdef";
 
-	num = 0;
 	str += ft_skip_blanks(str);
+	num = 0;
 	sign = (*str == '-') ? -1 : 1;
-	(*str == '-' || *str == '+') ? ++str : 0;
-	while (add_isvalid(*str, base, valid_hex))
+	if ('-' == *str || '+' == *str)
+		++str;
+	while (add_is_valid(*str, base, valid_hex))
 		num = num * base + add_value_of(*str++);
 	return (num * sign);
 }

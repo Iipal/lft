@@ -6,32 +6,32 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:07:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/21 23:07:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:23:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_str.h"
-#include <stdlib.h>
+#include "libft.h"
 
-static inline void	add_aux(const int64_t n, const int64_t b,
-						string out, int64_t *const p)
+static void	add_aux(int64_t const n, int64_t const b,
+				char *const out, int64_t *const p)
 {
-	char const	base[] = "0123456789ABCDEF";
+	static char const	base[] = "0123456789ABCDEF";
 
 	if (n <= -b || b <= n)
 		add_aux(n / b, b, out, p);
 	out[(*p)++] = base[ABS(n % b)];
 }
 
-string				ft_ltoa_base(int64_t value, uint8_t base)
+char		*ft_ltoa_base(int64_t value, uint8_t base)
 {
-	string	out;
+	char	*out;
 	int64_t	p;
 
-	if (2 > base || 16 < base || !(out = (string)malloc(sizeof(char) * 35)))
+	p = 0L;
+	if (2 > base || 16 < base)
 		return (NULL);
-	p = 0;
-	if (10 == base && 0 > value)
+	out = (char*)ft_memalloc(sizeof(char) * 35L);
+	if (10 == base && 0L > value)
 		out[p++] = '-';
 	add_aux(value, base, out, &p);
 	out[p] = '\0';

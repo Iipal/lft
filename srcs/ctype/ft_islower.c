@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 10:04:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:48:54 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:03:08 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline bool	ft_islower(const uchar c)
+bool	ft_islower(char const c)
 {
 	return (c >= 'a' && c <= 'z');
 }

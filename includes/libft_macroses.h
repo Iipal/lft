@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/21 00:07:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 00:11:09 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@
 **	ft_gnl reading buffer size.
 */
 # define BUFF_SIZE 2048
+
+/*
+**	Simple macroses for work with bits fields
+*/
+# define TO_N_BIT(n) (1 << (n))
+
+# define IS_BIT(mask, bit) (((mask) & (bit)) == (bit))
+
+# define SET_BIT(mask, bit) ((mask) |= (bit))
+# define TOGGLE_BIT(mask, bit) ((mask) ^= (bit))
+# define UNSET_BIT(mask, bit) ((mask) &= ~(bit))
 
 /*
 **	Most useful macro:
@@ -64,25 +75,5 @@
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
 # define TO_STR_LITERAL(str) #str
-
-# define STR    typedef char*           string
-# define USTR   typedef unsigned char*  ustring
-# define UCHAR  typedef unsigned char   uchar
-# define STRTAB typedef char**          strtab
-# define PVOID  typedef void*           pvoid
-# define IARR   typedef int32_t*        iarr
-# define ITAB   typedef int32_t**       itab
-# define UIARR  typedef uint32_t*       uiarr
-# define UINT   typedef uint32_t        uint
-
-STR;
-USTR;
-UCHAR;
-STRTAB;
-PVOID;
-IARR;
-ITAB;
-UIARR;
-UINT;
 
 #endif

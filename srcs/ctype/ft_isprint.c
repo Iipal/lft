@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 10:44:51 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:50:38 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:02:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline bool	ft_isprint(const uchar c)
+bool	ft_isprint(char const c)
 {
 	return (c >= ' ' && c <= '~');
 }

@@ -6,20 +6,20 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 12:39:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 02:23:05 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strrev(string str)
+void	ft_strrev(char *const str)
 {
-	size_t			end;
+	size_t const	real_end = ft_strlen(str);
 	size_t			start;
-	const size_t	real_end = ft_strlen(str);
+	size_t			end;
 
 	start = ~0UL;
 	end = real_end;
-	while (++start < real_end / 2)
+	while (real_end / 2L > ++start)
 		SWAP(str[start], str[--end]);
 }

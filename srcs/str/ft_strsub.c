@@ -6,31 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 18:07:51 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:19:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-string	ft_strsub(char const *s, const size_t start, const size_t len)
+char	*ft_strsub(char const *const s, size_t const start, size_t const len)
 {
-	string	src;
-	string	out;
-	size_t	i;
-	size_t	j;
-
-	out = NULL;
-	NO_R(s, NULL);
-	NO_R(out = ft_strnew(len ? len : 1), NULL);
-	if (!len)
-	{
-		out[0] = '\0';
-		return (out);
-	}
-	src = (string)s;
-	i = start;
-	j = ~0UL;
-	while (++j < len)
-		out[j] = src[i++];
-	return (out);
+	if (!s)
+		return (NULL);
+	return (ft_strncpy(ft_strnew(len), s + start, len));
 }

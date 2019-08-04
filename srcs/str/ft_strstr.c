@@ -6,30 +6,32 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:19:30 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/17 13:16:53 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:49:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-string	ft_strstr(string str, string to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	string cp;
-	string s1;
-	string s2;
+	char	*cp;
+	char	*s1;
+	char	*s2;
 
-	cp = (string)str;
-	NO_R(*to_find, (string)str);
+	cp = (char*)str;
+	if (!*to_find)
+		return (str);
 	while (*cp)
 	{
 		s1 = cp;
-		s2 = (string)to_find;
+		s2 = (char*)to_find;
 		while (*s1 && *s2 && !(*s1 - *s2))
 		{
 			s1++;
 			s2++;
 		}
-		NO_R(*s2, cp);
+		if (!*s2)
+			return (cp);
 		cp++;
 	}
 	return (NULL);

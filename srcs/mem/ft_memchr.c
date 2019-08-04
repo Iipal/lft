@@ -6,19 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:04:22 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 04:55:13 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 02:16:59 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-pvoid	ft_memchr(const pvoid s, const uchar c, size_t n)
+void	*ft_memchr(void const *const ptr, char const c, size_t n)
 {
-	ustring			out;
-	size_t			i;
+	char *const	out = (char *const)ptr;
+	size_t		i;
 
 	i = ~0UL;
-	out = (ustring)s;
 	while (n--)
 		if (out[++i] == c)
 			return (out + i);

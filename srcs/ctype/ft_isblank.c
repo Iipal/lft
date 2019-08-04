@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 10:13:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/15 17:51:35 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:04:35 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline bool	ft_isblank(const uchar c)
+bool	ft_isblank(char const c)
 {
 	return ((c >= '\t' && c <= '\r') || c == ' ');
 }

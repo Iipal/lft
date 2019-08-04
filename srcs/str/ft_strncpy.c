@@ -6,21 +6,23 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:45:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/20 16:28:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:31:40 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-string	ft_strncpy(string dest, string str, size_t len)
+char	*ft_strncpy(char *dest, char const *const str, size_t const len)
 {
-	string	temp;
+	size_t	j;
+	size_t	i;
 
-	temp = dest;
-	while (len--)
-		if (!*str)
-			*temp++ = 0;
+	i = 0UL;
+	j = ~0UL;
+	while (len > i)
+		if (!str[i])
+			dest[++j] = 0;
 		else
-			*temp++ = *str++;
+			dest[++j] = str[i++];
 	return (dest);
 }

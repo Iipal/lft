@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 20:56:04 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/21 20:56:28 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 01:07:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnchar(const uchar c, size_t n)
+void	ft_putnchar(char const c, size_t n)
 {
 	while (n--)
-		ft_putchar(c);
+		F_PUTCHAR(c);
 }
