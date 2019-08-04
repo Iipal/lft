@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 10:36:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:52:10 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static bool	add_is_valid(char const c, int8_t base, char const valid[])
 {
 	while (base--)
-		if (valid[base] == ft_tolower(c))
+		if (valid[base] == F_TOLOWER(c))
 			return (true);
 	return (false);
 }

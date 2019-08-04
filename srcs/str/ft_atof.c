@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:03:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:26:47 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:49:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ double_t		ft_atof(char const *str)
 	str += ft_digits(exp);
 	if ('.' == *str++)
 	{
-		while (str[++i] && ft_isdigit(str[i]))
+		while (str[++i] && F_ISDIGIT(str[i]))
 			++mnt_digits;
 		mnt = ft_atol(str);
 		if (ft_digits(mnt) > mnt_digits)
