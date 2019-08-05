@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:02:54 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 01:59:37 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/05 09:53:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_putendl_fd(char const *s, int32_t const fd);
 /*
 **	Put number \param n
 */
-void	ft_putnbr_fd(int32_t n, const int32_t const fd);
+void	ft_putnbr_fd(int32_t n, int32_t const fd);
 
 /*
 **	Print all strings from \param file to stdout or return false.
