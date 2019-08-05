@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 12:21:35 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 02:00:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/05 16:07:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	ft_putfile(char const *const file)
 {
 	int32_t const	fd = open(file, O_RDONLY);
-	char 			*temp;
+	char			*temp;
 
 	temp = NULL;
 	if (0 > fd)

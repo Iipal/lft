@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:02:54 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/05 09:53:58 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/05 15:21:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_putnbr(int64_t n);
 **	Put \param c char to specified \param fd output.
 */
 void	ft_putchar_fd(char const c, int32_t const fd);
-# define F_PUTCHAR_FD(c, __fd) write(__fd, &c, 1);
+# define F_PUTCHAR_FD(c, fd) write(fd, &c, 1);
 
 /*
 **	Put \param s string to specified \param fd output.
