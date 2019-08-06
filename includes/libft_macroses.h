@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 00:11:09 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/06 08:37:25 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,10 @@
 **	ft_gnl reading buffer size.
 */
 # define BUFF_SIZE 2048
-
 /*
 **	Simple macroses for work with bits fields
 */
-# define TO_N_BIT(n) (1 << (n))
-
-# define IS_BIT(mask, bit) (((mask) & (bit)) == (bit))
-
-# define SET_BIT(mask, bit) ((mask) |= (bit))
-# define TOGGLE_BIT(mask, bit) ((mask) ^= (bit))
-# define UNSET_BIT(mask, bit) ((mask) &= ~(bit))
+# include "libft_bits_macroses.h"
 
 /*
 **	Most useful macro:
