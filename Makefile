@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/21 14:13:58 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/06 11:09:45 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ endif
 LC += rcs
 
 CC := gcc -march=native -mtune=native -flto -Ofast -pipe
-CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG -fsanitize=address
+CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
 CFLAGS := -Wall -Wextra -Werror -Wunused
 INC := -I $(CURDIR)/includes/
 
