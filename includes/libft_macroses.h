@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/06 08:37:25 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/06 17:16:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@
 
 # define SIZEOF(type, x) (sizeof(type) * (x))
 
-# define ZERO(type, dest, x) ft_bzero(dest, SIZEOF(type,x))
-# define MALLOC(dest, type, x) (dest) = (type*)malloc(SIZEOF(type, x))
-# define MEM(t, d, x, m) { NOM_F(m, MALLOC(d,t,x)); ZERO(t,d,x); }
+# define MALLOC(dest, type, x) (dest) = (type*)ft_memalloc(SIZEOF(type, x))
+# define MEM(t, d, x, m) { NOM_F(m, MALLOC(d,t,x)); }
 
 # define FREE(trash, del) if ((trash)) {del((trash)); (trash) = NULL;}
 
