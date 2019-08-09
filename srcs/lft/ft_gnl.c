@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 00:57:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/09 14:28:19 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,21 @@ static int32_t	catline_recursive(int32_t const fd, char **data,
 	char	*temp_nl;
 
 	to_nl = ~0UL;
-	while (data[fd][++to_nl] && data[fd][to_nl] != '\n')
+	while (data[fd][++to_nl] && '\n' != data[fd][to_nl])
 		;
-	if (data[fd][to_nl] == '\n')
+	if ('\n' == data[fd][to_nl])
 	{
 		*line = ft_strndup(data[fd], to_nl);
 		temp_nl = ft_strdup(data[fd] + ++to_nl);
 		free(data[fd]);
 		data[fd] = temp_nl;
-		NODO(data[fd][0], ft_strdel(&data[fd]));
+		if (!data[fd][0])
+			ft_strdel(&data[fd]);
 	}
-	else if (data[fd][to_nl] == '\0')
+	else if (!data[fd][to_nl])
 	{
-		IFR(BUFF_SIZE == nbytes, ft_gnl(fd, line));
+		if (BUFF_SIZE == nbytes)
+			ft_gnl(fd, line);
 		*line = ft_strdup(data[fd]);
 		ft_strdel(&data[fd]);
 	}
@@ -46,17 +48,22 @@ int8_t			ft_gnl(int32_t const fd, char **line)
 	ssize_t		nbytes;
 
 	IFR(0 > fd || !line, -1);
+	if (0 > fd || !line)
+		return (-1);
 	while (0 < (nbytes = read(fd, buff, BUFF_SIZE)))
 	{
 		buff[nbytes] = '\0';
-		IFDO(!data[fd], data[fd] = ft_strnew(0));
+		if (!data[fd])
+			data[fd] = ft_strnew(0);
 		temp = ft_strjoin(data[fd], buff);
 		free(data[fd]);
 		data[fd] = temp;
 		if (ft_strchr(buff, '\n'))
 			break ;
 	}
-	IFR(0 > nbytes, -1);
-	IFR(!nbytes && (!data[fd] || !data[fd][0]), 0);
+	if (0 > nbytes)
+		return (-1);
+	if (!nbytes && (!data[fd] || !data[fd][0]))
+		return (0);
 	return (catline_recursive(fd, data, line, nbytes));
 }
