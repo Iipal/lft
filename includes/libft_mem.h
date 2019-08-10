@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 02:20:57 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/11 00:56:10 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	*ft_memset(void *const dest, int32_t const c, size_t len);
 **	\return \param dest where copies \param n bytes from
 **	 \param src to \param dest.
 */
-void	*ft_memcpy(void *const dest, void const *const src, size_t const n);
+void	*ft_memcpy(void *dest, void const *const src, size_t const n);
 
 /*
 **	\return \param dest where copies no more than \param n bytes from
