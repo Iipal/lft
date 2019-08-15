@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/06 17:16:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/15 21:29:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@
 # define NOM_F(msg, ex) if (!(ex)) {MSGN(msg); return (false);}
 # define NOM_R(msg, ex, ret) if (!(ex)) {MSGN(msg); return (ret);}
 
-# define SWAP(a, b) {typeof (a) _a = (a); (a) = (b); (b) = _a;}
+# define SWAP(a, b) do {typeof (a) _a = (a); (a) = (b); (b) = _a;} while (0)
 
 # define SIZEOF(type, x) (sizeof(type) * (x))
 
@@ -66,6 +66,7 @@
 # define ABS(var) ((var) < 0) ? -(var) : (var)
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-# define TO_STR_LITERAL(str) #str
+# define XTO_STR_LITERAL(str) #str
+# define TO_STR_LITERAL(str) XTO_STR_LITERAL(str)
 
 #endif
