@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_one_of_str.c                                 :+:      :+:    :+:   */
+/*   ft_is_one_of_strn.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 23:08:35 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/15 21:11:12 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/15 21:14:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...)
+size_t	ft_is_one_of_strn(char const *cmp, size_t const n, ...)
 {
 	char	*temp;
 	va_list	ap;
@@ -25,7 +25,7 @@ size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...)
 	while (!is_one_of && n > ++i)
 	{
 		temp = va_arg(ap, char*);
-		if (!ft_strcmp(cmp, temp))
+		if (!ft_strncmp(cmp, temp, ft_strlen(temp)))
 			is_one_of = true;
 	}
 	va_end(ap);

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 01:00:17 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/15 21:29:44 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,28 @@ size_t	ft_rand(size_t const limit);
 bool	ft_is_one_of_n(int64_t const cmp, size_t n, ...);
 
 /*
-**	Compare if one of \param n va_list arguments is equal to \param cmp.
-**	\param cmp: String to compare.
-**	\param cmp_len: boolean for compare strings length or not.
+**	Compare if one of \param n strings
+**	 in va_list arguments is equal to \param cmp.
+**	\param cmp: string to compare.
 **	\param n: va_list arguments counter to compare.
 **	\param ...: va_list.
 **	\return true if one of argument is equal to \param cmp, else - false.
+**	note: length of strings DON'T use in
+**	 compare via ft_strcmp() in this function.
 */
-size_t	ft_is_one_of_str(char const *cmp,
-						bool const cmp_len,
-						size_t const n, ...);
+size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...);
+
+/*
+**	Compare if one of \param n strings
+**	 in va_list arguments is equal to \param cmp.
+**	\param cmp: string to compare.
+**	\param n: va_list arguments counter to compare.
+**	\param ...: va_list.
+**	\return true if one of argument is equal to \param cmp, else - false.
+**	note: length of strings IS use in
+**	 compare via ft_strncmp() in this function.
+*/
+size_t	ft_is_one_of_strn(char const *cmp, size_t const n, ...);
 
 /*
 **	\return How many digits in \param n.
