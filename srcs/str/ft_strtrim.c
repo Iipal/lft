@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 19:26:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:19:53 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:57:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strtrim(char const *const s)
 	size_t	start;
 	size_t	len;
 
-	if (!s)
-		return (NULL);
 	start = ft_skip_blanks(s);
 	if (!s[start])
 		return (ft_strdup(s + start));

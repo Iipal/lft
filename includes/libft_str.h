@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:27:22 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:55:44 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,36 @@
 **	Free memory for string and set \param as to NULL.
 **	\param as pointer to string.
 */
-void	ft_strdel(char **as);
+void	ft_strdel(char **as) __nonnull((1));
 
 /*
 **	Reverse string \param str.
 */
-void	ft_strrev(char *const str);
+void	ft_strrev(char *const str) __nonnull((1));
 
 /*
 **	Replace all \param search symbols in string \param str to \param replace.
 */
 bool	ft_strrepchr(char *str,
 			char const search,
-			char const replace);
+			char const replace) __nonnull((1));
 
 /*
 **	Compare string \param s1 with \param s2.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-int32_t	ft_strcmp(char const *s1, char const *s2);
+int32_t	ft_strcmp(char const *s1, char const *s2)  __nonnull((1,2));
 
 /*
 **	Compare string \param s1 with \param s2 by \param n symbols.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-int32_t	ft_strncmp(char const *s1, char const *s2, size_t n);
+int32_t	ft_strncmp(char const *s1, char const *s2, size_t n)  __nonnull((1,2));
 
 /*
 **	\return length of string \param str.
 */
-size_t	ft_strlen(char const *const str);
+size_t	ft_strlen(char const *const str) __nonnull((1));
 
 /*
 **	Appends the NUL-terminated string \param src to the end of \param dest.
@@ -58,7 +58,7 @@ size_t	ft_strlen(char const *const str);
 */
 size_t	ft_strlcat(char *const dest,
 			char const *const src,
-			size_t const dstsize);
+			size_t const dstsize) __nonnull((1,2));
 
 /*
 **	Copies up to \param dstsize - 1 symbols from the NUL-terminated
@@ -66,78 +66,78 @@ size_t	ft_strlcat(char *const dest,
 */
 size_t	ft_strlcpy(char *const dest,
 			char const *const str,
-			size_t const dstsize);
+			size_t const dstsize) __nonnull((1,2));
 
 /*
 **	\return converted string \str alphabet symbols to lower case.
 */
-char	*ft_strlwr(char *str);
+char	*ft_strlwr(char *str) __nonnull((1));
 
 /*
 **	\return converted string \str alphabet symbols to upper case.
 */
-char	*ft_strupr(char *str);
+char	*ft_strupr(char *str) __nonnull((1));
 
 /*
 **	\return new allocated copy string \param src
 **	 or NULL if something went wrong.
 */
-char	*ft_strdup(char const *const src);
+char	*ft_strdup(char const *const src) __nonnull((1));
 
 /*
 **	\return new allocated copied \param n symbols from string \param src
 **	 or NULL if something went wrong.
 */
-char	*ft_strndup(char const *const s1, size_t const n);
+char	*ft_strndup(char const *const s1, size_t const n) __nonnull((1));
 
 /*
 **	Copy string \param str to \param dest.
 **	\return \param dest.
 */
-char	*ft_strcpy(char *dest, char const *const str);
+char	*ft_strcpy(char *dest, char const *const str) __nonnull((1,2));
 
 /*
 **	Copy \param len of string \param src to string \param dest.
 **	\return \param dest.
 */
-char	*ft_strncpy(char *dest, char const *const src, size_t const len);
+char	*ft_strncpy(char *dest, char const *const src, size_t const len) __nonnull((1,2));
 
 /*
 **	Appends string \param src to \param dest.
 **	\return \param dest.
 */
-char	*ft_strcat(char *dest, char const *const src);
+char	*ft_strcat(char *dest, char const *const src) __nonnull((1,2));
 
 /*
 **	Appends \param n symbols from string \param src to \param dest.
 **	\return \param dest.
 */
-char	*ft_strncat(char *dest, char const *const src, size_t const n);
+char	*ft_strncat(char *dest, char const *const src, size_t const n) __nonnull((1,2));
 
 /*
 ** \return a pointer to the first occurrence of the character \param c
 **	 in the string \param s.
 */
-char	*ft_strchr(char *str, char const c);
+char	*ft_strchr(char *str, char const c) __nonnull((1));
 
 /*
 **	\return a pointer to the last occurrence of the character \param c
 **	 in the string \param s
 */
-char	*ft_strrchr(char *s, char const c);
+char	*ft_strrchr(char *s, char const c) __nonnull((1));
 
 /*
 ** \return the first occurrence of the substring \param to_find
 **  in the string \param str.
 */
-char	*ft_strstr(char *str, char *to_find);
+char	*ft_strstr(char *str, char *to_find) __nonnull((1,2));
 
 /*
 ** \return the first occurrence of the null-terminated string
 **	 \param to_find in the string \param str,
 **	 where not more than \param len characters are searched.
 */
-char	*ft_strnstr(char *str, char const *const to_find, size_t len);
+char	*ft_strnstr(char *str, char const *const to_find, size_t len) __nonnull((1,2));
 
 /*
 **	\return allocate null-terminated string.
@@ -150,14 +150,14 @@ char	*ft_strnew(size_t const size);
 **	 If \param start and \param len aren’t refering to a valid substring,
 **	 the behavior is undefined. If the allocation fails, returns NULL.
 */
-char	*ft_strsub(char const *const s, size_t const start, size_t const len);
+char	*ft_strsub(char const *const s, size_t const start, size_t const len) __nonnull((1));
 
 /*
 **	\return allocate a “fresh” string ending with ’\0’,
 **	 result of the concatenation of \param s1 and \param s2.
 **	 If the allocation fails the function returns NULL.
 */
-char	*ft_strjoin(char const *const s1, char const *const s2);
+char	*ft_strjoin(char const *const s1, char const *const s2) __nonnull((1,2));
 
 /*
 **	\return allocate a copy of the string \param s without whitespaces
@@ -167,7 +167,7 @@ char	*ft_strjoin(char const *const s1, char const *const s2);
 **	 the function returns a copy of \param s.
 **	 If the allocation fails the function returns NULL.
 */
-char	*ft_strtrim(char const *const s);
+char	*ft_strtrim(char const *const s) __nonnull((1));
 
 /*
 ** \return allocate an array of “fresh” strings (all ending with ’\0’,
@@ -175,35 +175,35 @@ char	*ft_strtrim(char const *const s);
 **	 using the character \param c as a delimiter.
 **	 If the allocation fails the function returns NULL.
 */
-char	**ft_strsplit(char *s, char const c);
+char	**ft_strsplit(char *s, char const c) __nonnull((1));
 
 /*
 **	Convert string \param str to double type.
 **	\return 0.0 if string \param str is invalid,
 **	 else - number which contained in string
 */
-double	ft_atof(char const *str);
+double	ft_atof(char const *str) __nonnull((1));
 
 /*
 **	Convert string \param str to int32_t type.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string.
 */
-int32_t	ft_atoi(char const *str);
+int32_t	ft_atoi(char const *str) __nonnull((1));
 
 /*
 **	Convert string \param str to int64_t number.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string.
 */
-int64_t	ft_atol(char const *str);
+int64_t	ft_atol(char const *str) __nonnull((1));
 
 /*
 **	Convert string \param str to int32_t number in \param base notation.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string converted in \param base notation.
 */
-int32_t	ft_atoi_base(char const *str, int8_t const base);
+int32_t	ft_atoi_base(char const *str, int8_t const base) __nonnull((1));
 
 /*
 **	\return convert number \param n to string in \param base number system.

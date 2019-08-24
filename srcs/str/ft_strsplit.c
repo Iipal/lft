@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:28:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:57:26 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ char			**ft_strsplit(char *s, char const c)
 	size_t	i;
 
 	i = ~0UL;
-	if (!s)
-		return (NULL);
 	w_counter = ft_ss_words(s, c);
 	out = (char**)ft_memalloc(sizeof(char*) * (w_counter + 1));
 	while (w_counter--)

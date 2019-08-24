@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 19:11:48 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/05 16:08:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:57:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strjoin(char const *const s1, char const *const s2)
 	size_t	len2;
 
 	out = NULL;
-	if (!s1 || !s2)
-		return (out);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	out = ft_strnew(len1 + len2);

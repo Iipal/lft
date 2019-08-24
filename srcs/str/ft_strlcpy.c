@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 19:20:57 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 10:43:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:57:09 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ size_t	ft_strlcpy(char *const dest,
 {
 	size_t const	strsize = ft_strlen(str);
 
-	NO_F(str);
 	if (strsize < dstsize)
 		ft_memcpy(dest, (void const *const)str, strsize + 1);
 	else if (dstsize)
