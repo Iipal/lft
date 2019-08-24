@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/09 14:28:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:50:43 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ int8_t			ft_gnl(int32_t const fd, char **line)
 	char		buff[BUFF_SIZE + 1];
 	ssize_t		nbytes;
 
-	IFR(0 > fd || !line, -1);
-	if (0 > fd || !line)
+	if (0 > fd)
 		return (-1);
 	while (0 < (nbytes = read(fd, buff, BUFF_SIZE)))
 	{
