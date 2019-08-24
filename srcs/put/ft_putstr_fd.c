@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:39:34 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 01:56:54 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 15:59:11 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_putstr_fd(char const *const s, int32_t const fd)
 	size_t	i;
 
 	i = ~0UL;
-	while (s && s[++i])
+	while (s[++i])
 		F_PUTCHAR_FD(s[i], fd);
 }
