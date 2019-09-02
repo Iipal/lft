@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 10:24:50 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 01:58:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/09/02 21:52:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	ft_putnbr(int64_t n)
 	ft_bzero(tmp, sizeof(tmp));
 	if (0L > n)
 	{
-		tmp[is_neg++] = '-';
+		tmp[is_neg] = '-';
+		is_neg = true;
 		n = -n;
 	}
 	while (is_neg != n_len--)
