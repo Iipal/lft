@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/15 21:29:36 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/10/26 12:11:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,12 @@
 
 # define XTO_STR_LITERAL(str) #str
 # define TO_STR_LITERAL(str) XTO_STR_LITERAL(str)
+
+# ifndef __APPLE__
+#  define NON_NULL(p) __nonnull(p)
+# else
+#  define NON_NULL(p)
+# endif
+
 
 #endif
