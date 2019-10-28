@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/10/26 12:13:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/10/28 08:43:22 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 **	 1 - Successful read 1 line from file.
 **	 -1 - Reading error.]
 */
-int8_t	ft_gnl(int32_t const fd, char **line) NON_NULL((2));
+int8_t	ft_gnl(int32_t const fd, char **line);
 
 /*
 **	Randomize unsigned decimal number.
@@ -54,7 +54,7 @@ bool	ft_is_one_of_n(int64_t const cmp, size_t n, ...);
 **	note: length of strings DON'T use in
 **	 compare via ft_strcmp() in this function.
 */
-size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...) NON_NULL((1));
+size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...);
 
 /*
 **	Compare if one of \param n strings
@@ -66,7 +66,7 @@ size_t	ft_is_one_of_str(char const *cmp, size_t const n, ...) NON_NULL((1));
 **	note: length of strings IS use in
 **	 compare via ft_strncmp() in this function.
 */
-size_t	ft_is_one_of_strn(char const *cmp, size_t const n, ...) NON_NULL((1));
+size_t	ft_is_one_of_strn(char const *cmp, size_t const n, ...);
 
 /*
 **	\return How many digits in \param n.
@@ -78,42 +78,42 @@ size_t	ft_digits(int64_t n);
 **	If in string exist mantissa(data after .(dot) and actually .(dot))
 **	 the function will return number of digits including this .(dot).
 */
-size_t	ft_fdigits_str(char const *str) NON_NULL((1));
+size_t	ft_fdigits_str(char const *str);
 
 /*
 **	\return true is \param str contain only digits or false if not.
 */
-bool	ft_isdigits_str(char const *const str) NON_NULL((1));
+bool	ft_isdigits_str(char const *const str);
 
 /*
 **	\return true is \param str contain only digits and valid float value
 **	 or false if not.
 */
-bool	ft_isfdigits_str(char const *const str) NON_NULL((1));
+bool	ft_isfdigits_str(char const *const str);
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
-bool	ft_ishex_str(char *str) NON_NULL((1));
+bool	ft_ishex_str(char *str);
 
 /*
 **	\return true if \param n symbols in string \param str
 **		contains only hex digits or false if not.
 */
-bool	ft_ishex_strn(char *str, size_t n) NON_NULL((1));
+bool	ft_ishex_strn(char *str, size_t n);
 
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
-bool	ft_isalpha_str(char const *const str) NON_NULL((1));
+bool	ft_isalpha_str(char const *const str);
 
 /*
 **	\return How many blanks skips in string \param str.
 */
-size_t	ft_skip_blanks(char const *const str) NON_NULL((1));
+size_t	ft_skip_blanks(char const *const str);
 
 /*
 **	\return How many symbols to first blank symbol in string \param str.
 */
-size_t	ft_skip_to_blank(char const *const str) NON_NULL((1));
+size_t	ft_skip_to_blank(char const *const str);
 
 #endif
