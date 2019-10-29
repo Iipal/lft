@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/10/28 17:28:32 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/10/29 20:49:01 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@
 
 # define SWAP(a, b) do {typeof (a) _a = (a); (a) = (b); (b) = _a;} while (0)
 
+# define ARR_SIZE(arr) (sizeof((arr)) / sizeof(*(arr)))
 # define SIZEOF(type, x) (sizeof(type) * (x))
 
 # define MALLOC(dest, type, x) (dest) = (type*)ft_memalloc(SIZEOF(type, x))
