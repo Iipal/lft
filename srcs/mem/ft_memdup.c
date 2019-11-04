@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:42 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/04 18:08:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/04 21:40:45 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memdup(void const *const src, size_t const size)
+inline void	*ft_memdup(void const *const src, size_t const size)
 {
 	void	*out;
 

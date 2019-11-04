@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 15:45:49 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/24 16:02:08 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/04 21:43:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+inline void	ft_memdel(void **ap)
 {
 	if (*ap)
 	{
