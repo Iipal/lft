@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/10/28 08:39:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/04 21:10:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,17 @@ void	ft_bzero(void *const s, size_t const n);
 **	Free memory at pointer \param ap.
 */
 void	ft_memdel(void **ap);
+
+/*
+**	Creating duplicate of \param src on heap.
+*/
+void	*ft_memdup(void const *const src, size_t const size);
+
+/*
+**	Swap \param a and \param b where both is pointer to
+**	 \param len-bytes data-type and \return \param *a.
+*/
+void	ft_memswap(void *restrict a, void *restrict b, size_t const len);
 
 /*
 **	\return \param dest where fills the first \param len bytes of
