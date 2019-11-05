@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:19:30 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:37:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 12:02:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strstr(const char *restrict str, const char *restrict to_find)
 	const char	*s2;
 
 	if (!*to_find)
-		return (str);
+		return ((char*)str);
 	while (*cp)
 	{
 		s1 = cp;
@@ -30,7 +30,7 @@ char	*ft_strstr(const char *restrict str, const char *restrict to_find)
 			s2++;
 		}
 		if (!*s2)
-			return (cp);
+			return ((char*)cp);
 		cp++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:53:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 12:01:47 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,13 +120,13 @@ char			*ft_strncat(char *restrict dest,
 ** \return a pointer to the first occurrence of the character \param c
 **	 in the string \param s.
 */
-char			*ft_strchr(char const *str, int32_t c);
+char			*ft_strchr(char *str, int32_t c);
 
 /*
 **	\return a pointer to the last occurrence of the character \param c
 **	 in the string \param s
 */
-char			*ft_strrchr(char const *restrict s, int32_t c);
+char			*ft_strrchr(char *restrict s, int32_t c);
 
 /*
 ** \return the first occurrence of the substring \param to_find
@@ -140,7 +140,7 @@ char			*ft_strstr(const char *restrict str,
 **	 \param to_find in the string \param str,
 **	 where not more than \param len characters are searched.
 */
-char			*ft_strnstr(const char *str,
+char			*ft_strnstr(char *str,
 					const char *restrict to_find,
 					size_t len);
 
@@ -180,7 +180,7 @@ char			*ft_strtrim(const char *restrict s);
 **	 using the character \param c as a delimiter.
 **	 If the allocation fails the function returns NULL.
 */
-char			**ft_strsplit(const char *s, int32_t c);
+char			**ft_strsplit(char *s, int32_t c);
 
 /*
 **	Convert string \param str to double type.

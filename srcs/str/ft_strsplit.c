@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:46:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 12:01:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ static size_t			ft_ss_words(const char *s, int32_t c)
 	return (counter);
 }
 
-static inline size_t	ft_ss_wlen(const char *restrict s, int32_t c)
+static inline size_t	ft_ss_wlen(char *restrict s, int32_t c)
 {
 	const char *restrict	ch = ft_strchr(s, c);
 
 	return (ch ? (size_t)(ch - s) : ft_strlen(s));
 }
 
-char					**ft_strsplit(const char *s, int32_t c)
+char					**ft_strsplit(char *s, int32_t c)
 {
 	char	**out;
 	size_t	w_counter;

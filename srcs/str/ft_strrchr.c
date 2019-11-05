@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:07:43 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:35:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 12:00:46 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char const *restrict str, int32_t c)
+char	*ft_strrchr(char *restrict str, int32_t c)
 {
 	size_t	len;
 
