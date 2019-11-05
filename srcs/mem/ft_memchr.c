@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:04:22 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:33:07 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 09:56:48 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	*ft_memchr(const void *restrict ptr, int c, size_t n)
 	i = ~0UL;
 	while (n--)
 		if (out[++i] == c)
-			return (out + i);
+			return ((void*)(out + i));
 	return (NULL);
 }
