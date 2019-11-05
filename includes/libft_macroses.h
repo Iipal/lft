@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/10/26 12:11:41 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/10/29 20:49:01 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@
 
 # define SWAP(a, b) do {typeof (a) _a = (a); (a) = (b); (b) = _a;} while (0)
 
+# define ARR_SIZE(arr) (sizeof((arr)) / sizeof(*(arr)))
 # define SIZEOF(type, x) (sizeof(type) * (x))
 
 # define MALLOC(dest, type, x) (dest) = (type*)ft_memalloc(SIZEOF(type, x))
@@ -63,17 +64,17 @@
 
 # define FREE(trash, del) if ((trash)) {del((trash)); (trash) = NULL;}
 
+# define DEF_STRERR(exe, s) ft_printf(exe ": %s: %s\n", s, strerror(errno))
+
 # define ABS(var) ((var) < 0) ? -(var) : (var)
 # define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-# define XTO_STR_LITERAL(str) #str
-# define TO_STR_LITERAL(str) XTO_STR_LITERAL(str)
+# define TO_STR_LITERAL(str) #str
 
 # ifndef __APPLE__
 #  define NON_NULL(p) __nonnull(p)
 # else
 #  define NON_NULL(p)
 # endif
-
 
 #endif

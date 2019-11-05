@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 12:39:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 02:23:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 11:05:19 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strrev(char *const str)
+void	ft_strrev(char *restrict str)
 {
-	size_t const	real_end = ft_strlen(str);
+	const size_t	real_end = ft_strlen(str);
 	size_t			start;
 	size_t			end;
 

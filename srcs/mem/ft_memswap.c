@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:06:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:39:37 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/11/04 17:58:29 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/11/05 09:35:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_strnew(size_t size)
+inline void	ft_memswap(void *restrict a, void *restrict b, size_t len)
 {
-	return ((char*)ft_memalloc(sizeof(char) * (size + 1)));
+	void	*c;
+
+	c = ft_memdup(a, len);
+	ft_memmove(a, b, len);
+	ft_memmove(b, c, len);
+	ft_memdel(&c);
 }

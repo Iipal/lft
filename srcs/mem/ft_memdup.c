@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 17:06:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:39:37 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/11/04 17:50:42 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/11/05 09:34:52 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_strnew(size_t size)
+inline void	*ft_memdup(const void *restrict src, size_t size)
 {
-	return ((char*)ft_memalloc(sizeof(char) * (size + 1)));
+	void	*out;
+
+	out = ft_memalloc(size);
+	return (ft_memmove(out, src, size));
 }
