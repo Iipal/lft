@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:41:43 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/06 12:51:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/06 13:35:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,10 @@
 
 int32_t	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	uint8_t	u1;
-	uint8_t	u2;
+	int32_t	out;
 
-	u1 = 1;
-	while (n-- && u1)
-	{
-		u1 = (uint8_t)*s1++;
-		u2 = (uint8_t)*s2++;
-		if (u1 != u2)
-			return (u1 - u2);
-	}
-	return (0);
+	while (n--)
+		if ((out = *s1++ - *s2++))
+			break ;
+	return (out);
 }
