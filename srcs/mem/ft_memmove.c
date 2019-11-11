@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 13:43:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:36:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/12 01:03:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *restrict dest, const void *restrict src, size_t len)
 	dst = (uint8_t*)dest;
 	i = ~0UL;
 	if (sc < dst)
-		while (--len)
+		while (0 <= (ssize_t)--len)
 			dst[len] = sc[len];
 	else
 		while (++i < len)

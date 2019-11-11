@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:42 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:34:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/11 23:45:40 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ inline void	*ft_memdup(const void *restrict src, size_t size)
 	void	*out;
 
 	out = ft_memalloc(size);
-	return (ft_memmove(out, src, size));
+	return (ft_memcpy(out, src, size));
 }
