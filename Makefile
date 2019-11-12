@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/10/28 08:02:55 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/12 10:59:49 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,14 @@ NPWD := $(CURDIR)/$(NAME)
 UNAME_S := $(shell uname -s)
 ECHO := echo
 ifeq ($(UNAME_S),Linux)
-	LC := gcc-ar
 	ECHO += -e
+	AR := llvm-ar -rcs
 endif
 ifeq ($(UNAME_S),Darwin)
-	LC := ar
+	AR := ar -rcs
 endif
 
-LC += rcs
-
-CC_BASE := gcc
+CC_BASE := clang
 
 CC := $(CC_BASE) -Ofast -pipe -flto
 CC_DEBUG := $(CC_BASE) -g3 -D DEBUG
@@ -51,7 +49,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(ECHO) "$(INVERT)"
 	@$(ECHO) -n ' <=-=> | $(NPWD): '
-	@$(LC) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
 	@$(ECHO) "[$(GREEN)✓$(WHITE)$(INVERT)]$(WHITE)"
 	@$(ECHO)
 
