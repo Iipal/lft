@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/12 10:59:49 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/12 11:48:29 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ endif
 CC_BASE := clang
 
 CC := $(CC_BASE) -Ofast -pipe -flto
-CC_DEBUG := $(CC_BASE) -g3 -D DEBUG
-CC_PROFILE := $(CC_BASE) -no-pie -pg -O0
+CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
 
 CFLAGS := -Wall -Wextra -Werror -Wunused
 INC := -I $(CURDIR)/includes/
@@ -71,13 +70,6 @@ debug_all: set_cc_debug pre
 	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
 debug: set_cc_debug all
 	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
-
-set_cc_profle:
-	@$(eval CC=$(CC_PROFILE))
-profile_all: set_cc_profle pre
-	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for profile.$(WHITE)"
-profile: set_cc_profle all
-	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for profile.$(WHITE)"
 
 clean:
 	@$(DEL) $(OBJS)
