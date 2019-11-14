@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:35:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/14 13:43:44 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_MEM_H
 
 # include <string.h>
+# include <stdint.h>
+# include <stdlib.h>
 
 /*
 **	\return \param dest where fills the first \param len bytes of
