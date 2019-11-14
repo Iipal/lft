@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:14:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/14 13:41:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/14 16:56:49 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include "libft_mem.h"
 
-typedef struct	s_list
+struct	s_list
 {
 	void			*data;
 	size_t			data_size;
 	struct s_list	*next;
-}				t_list;
+};
+
+typedef struct s_list	t_list;
 
 t_list	*ft_lstnew(void const *restrict data, const size_t data_size);
 

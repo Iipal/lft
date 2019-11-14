@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:20:04 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/14 13:44:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/14 16:58:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstnew(void const *restrict data, const size_t data_size)
 		*out = (t_list) { NULL, 0UL, NULL };
 	else
 	{
-		if(!(out->data = (t_list*)ft_memalloc(sizeof(data))))
+		if (!(out->data = (t_list*)ft_memalloc(sizeof(data))))
 		{
 			free(out);
 			return (NULL);
