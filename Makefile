@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/12 11:48:29 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/12 11:53:18 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ifeq ($(UNAME_S),Darwin)
 	AR := ar -rcs
 endif
 
-CC_BASE := clang
+CC_BASE := clang -march=native -mtune=native
 
 CC := $(CC_BASE) -Ofast -pipe -flto
 CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
