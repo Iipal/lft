@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/12 11:53:18 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/15 15:12:42 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
 CFLAGS := -Wall -Wextra -Werror -Wunused
 INC := -I $(CURDIR)/includes/
 
-SRCS := $(abspath $(wildcard srcs/*/*.c srcs/*/*/*.c))
+SRCS := $(abspath $(wildcard $(shell find srcs -name "*.c")))
 OBJS := $(SRCS:%.c=%.o)
 
 DEL := rm -rf
