@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/14 13:43:44 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/17 16:24:10 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ extern void	ft_memdel(void **ap);
 **	\return pointer to allocated \param size bytes.
 */
 extern void	*ft_memalloc(size_t size);
+
+/*
+**	\return pointer to re-allocated of \param new_size pointer size
+**  and copy \param old_size bytes from \param ptr to \return pointer.
+*/
+void	*ft_memrealloc(void *restrict ptr, size_t old_size, size_t new_size);
 
 /*
 **	Creating duplicate of \param src on heap.
