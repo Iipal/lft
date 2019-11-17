@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/15 15:12:42 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/17 22:46:24 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ endif
 
 CC_BASE := clang -march=native -mtune=native
 
-CC := $(CC_BASE) -Ofast -pipe -flto
+CC := $(CC_BASE) -Ofast -pipe -flto -fpic
 CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
 
 CFLAGS := -Wall -Wextra -Werror -Wunused
