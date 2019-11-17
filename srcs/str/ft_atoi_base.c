@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:49:59 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:41:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static bool	add_is_valid(char const c, int8_t base, char const valid[])
 	return (false);
 }
 
-static char	add_value_of(uint8_t c)
+static int32_t	add_value_of(const char c)
 {
-	char	out;
+	int32_t	out;
 
 	out = 0;
 	if (F_ISDIGIT(c))

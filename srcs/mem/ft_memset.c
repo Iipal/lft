@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:17:58 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:32:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:30:26 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *restrict dest, int32_t c, size_t len)
 
 	out = (uint8_t*)dest;
 	while (len--)
-		*out++ = c;
+		*out++ = (uint8_t)c;
 	return (dest);
 }

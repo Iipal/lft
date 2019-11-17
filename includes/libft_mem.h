@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/17 16:24:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:37:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		*ft_memmove(void *restrict dest,
 **	\return matching byte of \param s after scans the initial \param n bytes
 **	 of \param s for the first instance of c.
 */
-void		*ft_memchr(const void *restrict ptr, int c, size_t n);
+void		*ft_memchr(void *restrict ptr, int c, size_t n);
 
 /*
 **	Compares the first \param n bytes of \param s1 and \param s2.

@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/17 22:46:24 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/11/18 01:15:40 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ CC_BASE := clang -march=native -mtune=native
 CC := $(CC_BASE) -Ofast -pipe -flto -fpic
 CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
 
-CFLAGS := -Wall -Wextra -Werror -Wunused
+CFLAGS := -Wall -Wextra -Werror -Wunused -Weverything
 INC := -I $(CURDIR)/includes/
 
 SRCS := $(abspath $(wildcard $(shell find srcs -name "*.c")))
@@ -43,6 +43,8 @@ INVERT := \033[7m
 
 SUCCESS = [$(GREEN)✓$(WHITE)]
 
+multi:
+	@$(MAKE) -j8 all
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -53,9 +55,8 @@ $(NAME): $(OBJS)
 	@$(ECHO)
 
 $(OBJS): %.o: %.c
-	@$(ECHO) -n ' $@: '
+	@$(ECHO) ' | $@ '
 	@$(CC) -c $(CFLAGS) $(INC) $< -o $@
-	@$(ECHO) "$(SUCCESS)"
 
 del:
 	@$(DEL) $(OBJS)

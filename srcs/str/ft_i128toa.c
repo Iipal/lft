@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:22:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:52:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 01:09:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 char	*ft_i128toa(__int128 n)
 {
 	char		*out;
-	__int128	len;
+	__int128_t	len;
 	bool		sign;
 
-	len = ft_digits(n);
+	len = (__int128_t)ft_digits((int64_t)n);
 	sign = 0 > n ? true : false;
-	if (!(out = ft_strnew(len + sign)))
+	if (!(out = ft_strnew((size_t)(len + sign))))
 		return (out);
 	while (len--)
 	{

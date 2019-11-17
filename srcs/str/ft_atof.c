@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:03:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:47:41 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:41:03 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ double_t		ft_atof(const char *str)
 	mnt = 0UL;
 	mnt_digits = 0UL;
 	s = ('-' == *str) ? -1.0 : 1.0;
-	((!exp) && (-1.0 == s)) ? ++str : str;
+	((!exp) && (0.0 > s)) ? ++str : str;
 	str += ft_digits(exp);
 	if ('.' == *str++)
 	{

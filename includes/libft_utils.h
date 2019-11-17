@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:57:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 01:07:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 **	 1 - Successful read 1 line from file.
 **	 -1 - Reading error.]
 */
-int8_t			ft_gnl(int32_t fd, char **restrict line);
+int32_t			ft_gnl(int32_t fd, char **restrict line);
 
 /*
 **	Compare if one of \param n va_list arguments is equal to \param cmp.
@@ -115,5 +115,23 @@ size_t			ft_skip_to_blank(const char *restrict str);
 **	\return random: number from 0 to \ref limits.
 */
 extern size_t	ft_rand(size_t limit);
+
+extern void __attribute__((__overloadable__))
+ft_swap(char *restrict a, char *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(short *restrict a, short *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(int *restrict a, int *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(long *restrict a, long *restrict b);
+
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned char *restrict a, unsigned char *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned short *restrict a, unsigned short *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned int *restrict a, unsigned int *restrict b);
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned long *restrict a, unsigned long *restrict b);
 
 #endif

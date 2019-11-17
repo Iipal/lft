@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:43:20 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:38:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int32_t	catline_recursive(int32_t fd, ssize_t nbytes,
 	return (1);
 }
 
-int8_t			ft_gnl(int32_t fd, char **restrict line)
+int32_t			ft_gnl(int32_t fd, char **restrict line)
 {
 	static char	*data[255];
 	char		*temp;

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 13:26:04 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:11:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 00:39:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int32_t	ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*(unsigned char*)s1 - *(unsigned char*)s2);
+	return (*(const unsigned char*)s1 - *(const unsigned char*)s2);
 }

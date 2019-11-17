@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/06 18:58:48 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 01:12:49 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ char			*ft_strncat(char *restrict dest,
 ** \return a pointer to the first occurrence of the character \param c
 **	 in the string \param s.
 */
-char			*ft_strchr(const char *str, int32_t c);
+char			*ft_strchr(char *str, int32_t c);
 
 /*
 **	\return a pointer to the last occurrence of the character \param c
@@ -132,8 +132,7 @@ char			*ft_strrchr(char *restrict s, int32_t c);
 ** \return the first occurrence of the substring \param to_find
 **  in the string \param str.
 */
-char			*ft_strstr(const char *restrict str,
-					const char *restrict to_find);
+char			*ft_strstr(char *restrict str, char *restrict to_find);
 
 /*
 ** \return the first occurrence of the null-terminated string
@@ -224,5 +223,10 @@ char			*ft_i128toa(__int128 n);
 **	\return convert number \param n to string.
 */
 char			*ft_itoa(int32_t n);
+
+/*
+**	\return convert number \param n to string.
+*/
+char			*ft_ltoa(int64_t n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/10/29 20:49:01 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 01:23:30 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,13 @@
 # define NOM_F(msg, ex) if (!(ex)) {MSGN(msg); return (false);}
 # define NOM_R(msg, ex, ret) if (!(ex)) {MSGN(msg); return (ret);}
 
-# define SWAP(a, b) do {typeof (a) _a = (a); (a) = (b); (b) = _a;} while (0)
-
 # define ARR_SIZE(arr) (sizeof((arr)) / sizeof(*(arr)))
 # define SIZEOF(type, x) (sizeof(type) * (x))
 
 # define MALLOC(dest, type, x) (dest) = (type*)ft_memalloc(SIZEOF(type, x))
 # define MEM(t, d, x, m) { NOM_F(m, MALLOC(d,t,x)); }
 
-# define FREE(trash, del) if ((trash)) {del((trash)); (trash) = NULL;}
+# define FREE(trash, del) if ((trash)) {del((trash));(trash)=NULL;}
 
 # define DEF_STRERR(exe, s) ft_printf(exe ": %s: %s\n", s, strerror(errno))
 
