@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/11/18 01:15:40 by tmaluh           ###   ########.fr        #
+#    Created: 2019/02/06 14:43:13 by tmaluh            #+#    #+#              #
+#    Updated: 2019/11/18 15:42:17 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := libft.a
-NPWD := $(CURDIR)/$(NAME)
+NAME = $(notdir $(CURDIR)).a
+NPWD = $(CURDIR)/$(NAME)
 
-UNAME_S := $(shell uname -s)
 ECHO := echo
+UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
 	ECHO += -e
 	AR := llvm-ar -rcs
@@ -23,67 +23,65 @@ ifeq ($(UNAME_S),Darwin)
 	AR := ar -rcs
 endif
 
-CC_BASE := clang -march=native -mtune=native
+CC := clang
 
-CC := $(CC_BASE) -Ofast -pipe -flto -fpic
-CC_DEBUG := $(CC_BASE) -glldb -D DEBUG
+CFLAGS := -march=native -mtune=native -Ofast -pipe -flto -fpic
+CFLAGS_DEBUG := -glldb -D DEBUG
 
-CFLAGS := -Wall -Wextra -Werror -Wunused -Weverything
-INC := -I $(CURDIR)/includes/
+CC_WARNINGS_FLAGS := -Wall -Wextra -Werror -Wunused
+IFLAGS := -I $(CURDIR)/includes -I $(CURDIR)/../libft/includes/
 
-SRCS := $(abspath $(wildcard $(shell find srcs -name "*.c")))
+SRCS := $(shell find srcs -name "*.c")
 OBJS := $(SRCS:%.c=%.o)
 
 DEL := rm -rf
 
-WHITE := \033[0m
-GREEN := \033[32m
-RED := \033[31m
-INVERT := \033[7m
+WHITE=\033[0m
+BGREEN=\033[42m
+GREEN=\033[32m
+RED=\033[31m
+INVERT=\033[7m
 
 SUCCESS = [$(GREEN)✓$(WHITE)]
+SUCCESS_NO_CLR = [✓]
 
+.PHONY: multi all
 multi:
-	@$(MAKE) -j8 all
+ifneq (,$(filter $(MAKECMDGOALS),debug debug_all))
+	@$(MAKE) -j 3 -Otarget --no-print-directory CFLAGS="$(CFLAGS_DEBUG)" all
+else
+	@$(MAKE) -j 3 -Otarget --no-print-directory all
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(ECHO) "$(INVERT)"
-	@$(ECHO) -n ' <=-=> | $(NPWD): '
 	@$(AR) $(NAME) $(OBJS)
-	@$(ECHO) "[$(GREEN)✓$(WHITE)$(INVERT)]$(WHITE)"
-	@$(ECHO)
+	@$(MAKE) -q STATUS --no-print-directory
 
 $(OBJS): %.o: %.c
-	@$(ECHO) ' | $@ '
-	@$(CC) -c $(CFLAGS) $(INC) $< -o $@
+	@$(CC) -c $(CFLAGS) $(CC_WARNINGS_FLAGS) $(IFLAGS) $< -o $@
+	@$(ECHO) " | $@: $(SUCCESS)"
 
-del:
-	@$(DEL) $(OBJS)
-	@$(DEL) $(NAME)
+STATUS:
+	@$(info / compiled: $(NPWD): $(SUCCESS_NO_CLR))
+	@$(info \ flags: $(CFLAGS))
 
-pre: del $(NAME)
-	@$(ECHO) "$(INVERT)$(GREEN)Successed re-build.$(WHITE)"
-
-set_cc_debug:
-	@$(eval CC=$(CC_DEBUG))
-debug_all: set_cc_debug pre
-	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
-debug: set_cc_debug all
-	@$(ECHO) "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
+debug_all: pre
+debug: multi
 
 clean:
 	@$(DEL) $(OBJS)
-
 fclean: clean
 	@$(DEL) $(NAME)
-	@$(ECHO) "$(INVERT)$(RED)deleted$(WHITE)$(INVERT): $(NPWD)$(WHITE)"
+	@$(ECHO) "$(INVERT)deleted$(WHITE): $(NPWD)"
 
-re: fclean all
+pre: fclean multi
+re: fclean multi
 
 norme:
-	@$(ECHO) "$(INVERT)norminette for $(GREEN)$(NAME)$(WHITE)$(INVERT):$(WHITE)"
+	@$(ECHO) "$(INVERT)norminette$(WHITE) for $(NPWD):"
 	@norminette includes/
 	@norminette $(SRCS)
 
-.PHONY: re fclean clean all norme del pre debug debug_all
+.PHONY: re fclean clean norme del pre debug debug_all norme STATUS
