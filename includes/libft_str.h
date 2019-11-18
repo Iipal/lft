@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 01:12:49 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/18 15:27:55 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ char			*ft_strncat(char *restrict dest,
 ** \return a pointer to the first occurrence of the character \param c
 **	 in the string \param s.
 */
-char			*ft_strchr(char *str, int32_t c);
+char			*ft_strchr(const char *str, int32_t c);
 
 /*
 **	\return a pointer to the last occurrence of the character \param c
