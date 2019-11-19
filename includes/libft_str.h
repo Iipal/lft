@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 15:27:55 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/20 00:44:57 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,5 +228,11 @@ char			*ft_itoa(int32_t n);
 **	\return convert number \param n to string.
 */
 char			*ft_ltoa(int64_t n);
+
+/*
+**	\return convert number \param num to \param dst string
+**	 in \param radix notation.
+*/
+char			*ft_ultoa(unsigned long num, char *restrict dst, int base);
 
 #endif
