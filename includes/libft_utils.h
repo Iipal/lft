@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 01:07:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/19 21:10:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,31 +35,18 @@ int32_t			ft_gnl(int32_t fd, char **restrict line);
 **	\param ...: va_list.
 **	\return true if one of argument is equal to \param cmp, else - false.
 */
-bool			ft_is_one_of_n(int64_t cmp, size_t n, ...);
-
-/*
-**	Compare if one of \param n strings
-**	 in va_list arguments is equal to \param cmp.
-**	\param cmp: string to compare.
-**	\param n: va_list arguments counter to compare.
-**	\param ...: va_list.
-**	\return true if one of argument is equal to \param cmp, else - false.
-**	note: length of strings DON'T use in
-**	 compare via ft_strcmp() in this function.
-*/
-size_t			ft_is_one_of_str(const char *restrict cmp, size_t n, ...);
-
-/*
-**	Compare if one of \param n strings
-**	 in va_list arguments is equal to \param cmp.
-**	\param cmp: string to compare.
-**	\param n: va_list arguments counter to compare.
-**	\param ...: va_list.
-**	\return true if one of argument is equal to \param cmp, else - false.
-**	note: length of strings IS use in
-**	 compare via ft_strncmp() in this function.
-*/
-size_t			ft_is_one_of_strn(const char *restrict cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(char cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(int cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(long cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(char *cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(const char *restrict cmp, size_t n, ...);
+size_t __attribute__((__overloadable__))
+ft_is_one_of_n(const char *restrict cmp, size_t cmp_len, size_t n, ...);
 
 /*
 **	\return How many digits in \param n.
