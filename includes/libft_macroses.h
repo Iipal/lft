@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 00:49:08 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/22 02:12:41 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@
 **	ft_gnl reading buffer size.
 */
 # define BUFF_SIZE 2048
+
 /*
 **	Simple macroses for work with bits fields
 */
 # include "libft_bits_macroses.h"
 
-/*
-**	Most useful macro:
-*/
 # define ARR_SIZE(arr) (sizeof((arr)) / sizeof(*(arr)))
 
 # define ABS(var) ((var) < 0) ? -(var) : (var)
