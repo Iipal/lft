@@ -6,15 +6,12 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 16:59:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 02:12:41 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/22 13:24:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_MACROSES_H
 # define LIBFT_MACROSES_H
-
-# include <stdint.h>
-# include <stdbool.h>
 
 /*
 **	ft_gnl reading buffer size.

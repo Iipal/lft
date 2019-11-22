@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/21 16:37:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/22 13:35:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_UTILS_H
 
 # include <string.h>
+# include <stdint.h>
 
 # include "libft_macroses.h"
 

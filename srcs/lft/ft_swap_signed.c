@@ -6,11 +6,11 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 00:55:06 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/21 16:39:43 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/22 13:34:14 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_utils.h"
+#include "libft.h"
 
 inline void __attribute__((__overloadable__))
 	ft_swap(char *restrict a, char *restrict b)

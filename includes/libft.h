@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 10:04:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/14 13:45:32 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/22 13:26:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdbool.h>
 
 /*
-**	For above school-42 norme cheats stuff:
+**	Some marcoses:
 */
 # include "libft_macroses.h"
 
