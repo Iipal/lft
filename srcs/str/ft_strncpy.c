@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:45:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:31:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/25 21:23:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ char	*ft_strncpy(char *restrict dest,
 	j = ~0UL;
 	while (len > i)
 		if (!str[i])
+		{
 			dest[++j] = 0;
+			break ;
+		}
 		else
 			dest[++j] = str[i++];
 	return (dest);
