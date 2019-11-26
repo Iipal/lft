@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:45:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/25 21:23:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/26 11:39:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,9 @@ char	*ft_strncpy(char *restrict dest,
 			const char *restrict str,
 			size_t len)
 {
-	size_t	j;
-	size_t	i;
+	const size_t	size = ft_strnlen(str, len);
 
-	i = 0UL;
-	j = ~0UL;
-	while (len > i)
-		if (!str[i])
-		{
-			dest[++j] = 0;
-			break ;
-		}
-		else
-			dest[++j] = str[i++];
-	return (dest);
+	if (size != len)
+		ft_memset(dest + size, '\0', len - size);
+	return (ft_memcpy(dest, str, size));
 }
