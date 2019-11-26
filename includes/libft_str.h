@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 13:25:04 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/26 11:34:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ int32_t			ft_strncmp(const char *s1, const char *s2, size_t n);
 **	\return length of string \param str.
 */
 size_t			ft_strlen(const char *restrict str);
+/*
+**	\return length of string \param str.
+*/
+size_t			ft_strnlen(const char *restrict str, size_t max_len);
 
 /*
 **	Appends the NUL-terminated string \param src to the end of \param dest.
