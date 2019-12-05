@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 13:35:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/02 20:29:39 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 **	 -1 - Reading error.]
 */
 int32_t
-ft_gnl(int32_t fd, char **restrict line);
+ft_gnl(int32_t fd, char *restrict *restrict line);
 
 /*
 **	Compare if one of \param n va_list arguments is equal to \param cmp.

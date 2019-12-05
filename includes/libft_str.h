@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/26 11:34:17 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/02 20:30:55 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **	Free memory for string and set \param as to NULL.
 **	\param as pointer to string.
 */
-extern void		ft_strdel(char **restrict as);
+extern void		ft_strdel(char *restrict *restrict as);
 
 /*
 **	Reverse string \param str.
