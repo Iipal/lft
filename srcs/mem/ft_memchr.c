@@ -6,16 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:04:22 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 15:26:12 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:41:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *restrict ptr, int c, size_t n)
+void *LFT_NULLALBE	ft_memchr(const void *LFT_RESTRICT LFT_NONNULL ptr,
+						int32_t c,
+						size_t n)
 {
-	const char	*out = (const char*)ptr;
-	size_t		i;
+	const __u_char	*out = (const __u_char*)ptr;
+	size_t			i;
 
 	i = ~0UL;
 	while (n--)

@@ -6,13 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/12 20:22:35 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:46:52 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_memswap(void *restrict a, void *restrict b, size_t len)
+inline void	ft_memswap(void *LFT_RESTRICT LFT_NONNULL a,
+				void *LFT_RESTRICT LFT_NONNULL b,
+				size_t len)
 {
 	void	*c;
 

@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 17:06:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 13:04:28 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:21:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char	*ft_strnew(size_t size)
+inline char	*LFT_NULLALBE ft_strnew(size_t size)
 {
 	return ((char*)ft_memalloc(sizeof(char) * (size + 1)));
 }

@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/21 16:39:03 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:12:35 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 bool __attribute__((__overloadable__))
-	ft_ishex_str(const char *restrict s)
+	ft_ishex_str(const char *LFT_RESTRICT LFT_NONNULL s)
 {
 	size_t		i;
 	const char	*str = (const char*)s;
@@ -33,7 +33,7 @@ bool __attribute__((__overloadable__))
 }
 
 bool __attribute__((__overloadable__))
-	ft_ishex_str(const char *restrict s, size_t n)
+	ft_ishex_str(const char *LFT_RESTRICT LFT_NONNULL s, size_t n)
 {
 	size_t		i;
 	const char	*str = (const char*)s;

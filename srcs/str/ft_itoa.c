@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 10:33:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 13:34:54 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:31:07 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int32_t n)
+char *LFT_NULLALBE	ft_itoa(int32_t n)
 {
 	char	*out;
 	size_t	len;

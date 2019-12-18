@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/21 16:38:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:28:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static bool
-	add_is_valid(char const c, int8_t base, char const valid[])
+	add_is_valid(char const c, int8_t base, char const valid[17])
 {
 	while (base--)
 		if (valid[base] == F_TOLOWER(c))
@@ -37,11 +37,11 @@ static inline int32_t __attribute__((__always_inline__))
 }
 
 int32_t
-	ft_atoi_base(const char *str, int8_t base)
+	ft_atoi_base(const char *LFT_NONNULL str, int8_t base)
 {
 	int32_t		num;
 	int8_t		sign;
-	const char	valid_hex[] = "0123456789abcdef";
+	const char	valid_hex[17] = "0123456789abcdef";
 
 	num = 0;
 	str += ft_skip_blanks(str);

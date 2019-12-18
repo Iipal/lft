@@ -6,16 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:13:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:33:24 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:41:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int32_t	ft_memcmp(const void *restrict s1, const void *restrict s2, size_t n)
+int32_t	ft_memcmp(const void *LFT_RESTRICT LFT_NONNULL s1,
+			const void *LFT_RESTRICT LFT_NONNULL s2,
+			size_t n)
 {
-	const uint8_t	*str1 = (const uint8_t*)s1;
-	const uint8_t	*str2 = (const uint8_t*)s2;
+	const __u_char	*str1 = (const __u_char*)s1;
+	const __u_char	*str2 = (const __u_char*)s2;
 
 	if (str1 == str2 || !n)
 		return (0);

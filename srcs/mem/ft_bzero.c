@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 11:21:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 09:34:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:42:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_bzero(void *restrict s, size_t n)
+inline void	ft_bzero(void *LFT_RESTRICT LFT_NONNULL s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

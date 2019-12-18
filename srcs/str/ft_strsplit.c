@@ -6,20 +6,20 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 12:01:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:27:42 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t			ft_ss_words(const char *s, int32_t c)
+static size_t			ft_ss_words(const char *LFT_NONNULL s, int32_t c)
 {
 	size_t	counter;
 	bool	is_word;
 
 	counter = 0UL;
 	is_word = false;
-	while (s && *s)
+	while (*s)
 	{
 		if (is_word && *s == c)
 			is_word = true;
@@ -33,14 +33,14 @@ static size_t			ft_ss_words(const char *s, int32_t c)
 	return (counter);
 }
 
-static inline size_t	ft_ss_wlen(char *restrict s, int32_t c)
+static inline size_t	ft_ss_wlen(char *LFT_RESTRICT LFT_NONNULL s, int32_t c)
 {
-	const char *restrict	ch = ft_strchr(s, c);
+	const char *LFT_RESTRICT	ch = ft_strchr(s, c);
 
 	return (ch ? (size_t)(ch - s) : ft_strlen(s));
 }
 
-char					**ft_strsplit(char *s, int32_t c)
+char *LFT_NULLALBE *LFT_NULLALBE	ft_strsplit(char *LFT_NONNULL s, int32_t c)
 {
 	char	**out;
 	size_t	w_counter;

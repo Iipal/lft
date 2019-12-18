@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/02 20:29:39 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:18:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdint.h>
 
 # include "libft_macroses.h"
+# include "libft_defs.h"
 
 /*
 **	Reading file line by line. (Get Next Line)
@@ -28,7 +29,8 @@
 **	 -1 - Reading error.]
 */
 int32_t
-ft_gnl(int32_t fd, char *restrict *restrict line);
+ft_gnl(int32_t fd, char *LFT_RESTRICT LFT_NONNULL
+					*LFT_RESTRICT LFT_NULLALBE line);
 
 /*
 **	Compare if one of \param n va_list arguments is equal to \param cmp.
@@ -44,11 +46,10 @@ ft_is_one_of_n(int cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
 ft_is_one_of_n(long cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
-ft_is_one_of_n(char *cmp, size_t n, ...);
+ft_is_one_of_n(char *LFT_RESTRICT LFT_NONNULL cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
-ft_is_one_of_n(const char *restrict cmp, size_t n, ...);
-size_t __attribute__((__overloadable__))
-ft_is_one_of_n(const char *restrict cmp, size_t cmp_len, size_t n, ...);
+ft_is_one_of_n(char *LFT_RESTRICT LFT_NONNULL cmp,
+	size_t cmp_len, size_t n, ...);
 
 /*
 **	\return How many digits in \param n.
@@ -62,46 +63,46 @@ ft_digits(int64_t n);
 **	 the function will return number of digits including this .(dot).
 */
 size_t
-ft_fdigits_str(const char *restrict str);
+ft_fdigits_str(const char *LFT_NONNULL str);
 
 /*
 **	\return true is \param str contain only digits or false if not.
 */
 bool
-ft_isdigits_str(const char *restrict str);
+ft_isdigits_str(const char *LFT_RESTRICT LFT_NONNULL str);
 
 /*
 **	\return true is \param str contain only digits and valid float value
 **	 or false if not.
 */
 bool
-ft_isfdigits_str(const char *restrict str);
+ft_isfdigits_str(const char *LFT_RESTRICT LFT_NONNULL str);
 
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
 bool __attribute__((__overloadable__))
-ft_ishex_str(const char *restrict str);
+ft_ishex_str(const char *LFT_RESTRICT LFT_NONNULL str);
 bool __attribute__((__overloadable__))
-ft_ishex_str(const char *restrict str, size_t n);
+ft_ishex_str(const char *LFT_RESTRICT LFT_NONNULL str, size_t n);
 
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
 bool
-ft_isalpha_str(const char *restrict str);
+ft_isalpha_str(const char *LFT_RESTRICT LFT_NONNULL str);
 
 /*
 **	\return How many blanks skips in string \param str.
 */
 size_t
-ft_skip_blanks(const char *restrict str);
+ft_skip_blanks(const char *LFT_RESTRICT LFT_NONNULL str);
 
 /*
 **	\return How many symbols to first blank symbol in string \param str.
 */
 size_t
-ft_skip_to_blank(const char *restrict str);
+ft_skip_to_blank(const char *LFT_RESTRICT LFT_NONNULL str);
 
 /*
 **	Randomize unsigned decimal number.
@@ -112,21 +113,37 @@ extern size_t
 ft_rand(size_t limit);
 
 extern void __attribute__((__overloadable__))
-ft_swap(char *restrict a, char *restrict b);
-extern void __attribute__((__overloadable__))
-ft_swap(short *restrict a, short *restrict b);
-extern void __attribute__((__overloadable__))
-ft_swap(int *restrict a, int *restrict b);
-extern void __attribute__((__overloadable__))
-ft_swap(long *restrict a, long *restrict b);
+ft_swap(char *LFT_RESTRICT LFT_NONNULL a,
+		char *LFT_RESTRICT LFT_NONNULL b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned char *restrict a, unsigned char *restrict b);
+ft_swap(short *LFT_RESTRICT LFT_NONNULL a,
+		short *LFT_RESTRICT LFT_NONNULL b);
+
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned short *restrict a, unsigned short *restrict b);
+ft_swap(int *LFT_RESTRICT LFT_NONNULL a,
+		int *LFT_RESTRICT LFT_NONNULL b);
+
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned int *restrict a, unsigned int *restrict b);
+ft_swap(long *LFT_RESTRICT LFT_NONNULL a,
+		long *LFT_RESTRICT LFT_NONNULL b);
+
+
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned long *restrict a, unsigned long *restrict b);
+ft_swap(unsigned char *LFT_RESTRICT LFT_NONNULL a,
+		unsigned char *LFT_RESTRICT LFT_NONNULL b);
+
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned short *LFT_RESTRICT LFT_NONNULL a,
+		unsigned short *LFT_RESTRICT LFT_NONNULL b);
+
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned int *LFT_RESTRICT LFT_NONNULL a,
+		unsigned int *LFT_RESTRICT LFT_NONNULL b);
+
+extern void __attribute__((__overloadable__))
+ft_swap(unsigned long *LFT_RESTRICT LFT_NONNULL a,
+		unsigned long *LFT_RESTRICT LFT_NONNULL b);
+
 
 #endif

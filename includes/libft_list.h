@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:14:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/02 21:09:57 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:08:52 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,30 @@
 
 struct	s_list
 {
-	void			*data;
-	size_t			data_size;
-	struct s_list	*next;
+	void *LFT_RESTRICT LFT_NULLALBE				data;
+	size_t										data_size;
+	struct s_list *LFT_RESTRICT LFT_NULLALBE	next;
 };
 
 typedef struct s_list	t_list;
 
-t_list	*ft_lstnew(void const *restrict data, const size_t data_size);
+t_list *LFT_NULLALBE	ft_lstnew(void const *LFT_RESTRICT LFT_NONNULL data,
+							const size_t data_size);
 
-void	ft_lstadd(t_list *restrict *alist, t_list *restrict new);
+void	ft_lstadd(t_list *LFT_NONNULL LFT_RESTRICT
+			*LFT_RESTRICT LFT_NONNULL alist,
+			t_list *LFT_RESTRICT LFT_NULLALBE new);
 
-void	ft_lstiter(t_list *list, void (*f)(t_list*));
-t_list	*ft_lstmap(t_list *list, t_list *(*f)(t_list*));
+void	ft_lstiter(t_list *LFT_NONNULL list,
+			void (*LFT_NONNULL f)(t_list *LFT_NULLALBE));
+t_list *LFT_NULLALBE	ft_lstmap(t_list *LFT_NONNULL list,
+			t_list *LFT_NULLALBE (*LFT_NONNULL f)(t_list *LFT_NULLALBE));
 
-void	ft_lstdelone(t_list **alist, void (*del)(void*, size_t));
-void	ft_lstdel(t_list **alist, void (*del)(void*, size_t));
+void	ft_lstdelone(t_list *LFT_RESTRICT LFT_NONNULL
+			*LFT_RESTRICT LFT_NULLALBE alist,
+			void (*LFT_NONNULL del)(void *LFT_NULLALBE, size_t));
+void	ft_lstdel(t_list *LFT_RESTRICT LFT_NONNULL
+			*LFT_RESTRICT LFT_NULLALBE alist,
+			void (*LFT_NONNULL del)(void *LFT_NULLALBE, size_t));
 
 #endif

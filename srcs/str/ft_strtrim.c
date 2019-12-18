@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 19:26:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 11:43:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:26:23 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *restrict s)
+char *LFT_NULLALBE	ft_strtrim(const char *LFT_RESTRICT LFT_NONNULL s)
 {
 	size_t	start;
 	size_t	len;

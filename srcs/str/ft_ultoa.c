@@ -6,13 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 00:13:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/22 13:34:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:31:48 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_ultoa(unsigned long num, char *restrict dst, int base)
+char *LFT_NULLALBE	ft_ultoa(unsigned long num,
+						char *LFT_RESTRICT LFT_NONNULL dst,
+						int base)
 {
 	char	temp[17];
 	long	digit;

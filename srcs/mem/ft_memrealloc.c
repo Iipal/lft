@@ -6,13 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 16:16:23 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/18 15:27:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 19:45:06 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memrealloc(void *restrict ptr, size_t old_size, size_t new_size)
+void *LFT_NULLALBE	ft_memrealloc(void *LFT_RESTRICT LFT_NULLALBE ptr,
+						size_t old_size,
+						size_t new_size)
 {
 	void	*out;
 

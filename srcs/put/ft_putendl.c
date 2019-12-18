@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:39:47 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 12:04:20 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:02:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putendl(const char *restrict s)
+inline void	ft_putendl(const char *LFT_RESTRICT LFT_NONNULL s)
 {
 	ft_putstr(s);
-	ft_putchar('\n');
+	F_PUTSCHAR("\n");
 }
