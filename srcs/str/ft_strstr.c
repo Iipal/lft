@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:19:30 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:20:42 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *LFT_NULLALBE	ft_strstr(char *LFT_RESTRICT LFT_NONNULL str,
-						char *LFT_RESTRICT LFT_NONNULL to_find)
+char *_Nullable	ft_strstr(char *restrict _Nonnull str,
+						char *restrict _Nonnull to_find)
 {
 	char	*cp;
 	char	*s1;

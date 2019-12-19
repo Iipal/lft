@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 00:13:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:31:48 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *LFT_NULLALBE	ft_ultoa(unsigned long num,
-						char *LFT_RESTRICT LFT_NONNULL dst,
+char *_Nullable	ft_ultoa(unsigned long num,
+						char *restrict _Nonnull dst,
 						int base)
 {
 	char	temp[17];

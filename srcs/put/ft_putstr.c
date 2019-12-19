@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:36:48 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:55:43 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *LFT_RESTRICT LFT_NONNULL s)
+void	ft_putstr(const char *restrict _Nonnull s)
 {
 	size_t	i;
 

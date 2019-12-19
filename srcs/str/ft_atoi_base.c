@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:28:51 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:53:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static inline int32_t __attribute__((__always_inline__))
 }
 
 int32_t
-	ft_atoi_base(const char *LFT_NONNULL str, int8_t base)
+	ft_atoi_base(const char *_Nonnull str, int8_t base)
 {
 	int32_t		num;
 	int8_t		sign;

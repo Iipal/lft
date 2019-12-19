@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:07:43 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:32:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *LFT_NULLALBE	ft_strrchr(char *LFT_NONNULL LFT_RESTRICT str,
+char *_Nullable	ft_strrchr(char *_Nonnull restrict str,
 						int32_t c)
 {
 	size_t	len;

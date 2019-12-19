@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 16:37:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:32:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:02 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *LFT_NULLALBE	ft_strchr(char *LFT_NONNULL str, int32_t c)
+char *_Nullable	ft_strchr(char *_Nonnull str, int32_t c)
 {
 	while (*str && *str != c)
 		++str;

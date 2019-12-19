@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:03:55 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:28:03 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:53:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static double_t	add_mnt_delimeter(size_t mnt_digits)
 	return (out);
 }
 
-double_t		ft_atof(const char *LFT_NONNULL str)
+double_t		ft_atof(const char *_Nonnull str)
 {
 	const int64_t	exp = ft_atol(str);
 	int64_t			mnt;

@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:43:45 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:48:11 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *LFT_NULLALBE	ft_memccpy(void *LFT_RESTRICT LFT_NONNULL dest,
-						const void *LFT_RESTRICT LFT_NONNULL src,
+void *_Nullable	ft_memccpy(void *restrict _Nonnull dest,
+						const void *restrict _Nonnull src,
 						uint8_t c,
 						size_t n)
 {

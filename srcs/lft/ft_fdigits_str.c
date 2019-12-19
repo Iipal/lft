@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 17:41:00 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:11:25 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:53:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_fdigits_str(const char *LFT_NONNULL str)
+size_t	ft_fdigits_str(const char *_Nonnull str)
 {
 	const int64_t	exp = ft_atol(str);
 	int64_t			mantissa;

@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 11:11:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:28:16 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:53:33 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int64_t	ft_atol(const char *LFT_NONNULL str)
+int64_t	ft_atol(const char *_Nonnull str)
 {
 	int64_t	num;
 	int64_t	sign;

@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:42 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:46:23 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void *LFT_NULLALBE	ft_memdup(const void *LFT_RESTRICT LFT_NONNULL src,
+inline void *_Nullable	ft_memdup(const void *restrict _Nonnull src,
 								size_t size)
 {
 	return (ft_memcpy(ft_memalloc(size), src, size));

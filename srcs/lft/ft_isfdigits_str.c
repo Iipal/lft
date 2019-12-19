@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 20:02:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:12:08 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_isfdigits_str(const char *LFT_RESTRICT LFT_NONNULL str)
+bool	ft_isfdigits_str(const char *restrict _Nonnull str)
 {
 	size_t	i;
 	bool	dot;

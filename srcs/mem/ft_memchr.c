@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 15:04:22 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:41:17 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *LFT_NULLALBE	ft_memchr(const void *LFT_RESTRICT LFT_NONNULL ptr,
+void *_Nullable	ft_memchr(const void *restrict _Nonnull ptr,
 						int32_t c,
 						size_t n)
 {

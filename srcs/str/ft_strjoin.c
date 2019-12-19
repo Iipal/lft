@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 19:11:48 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:22:40 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline char *LFT_NULLALBE	ft_strjoin(const char *LFT_RESTRICT LFT_NONNULL s1,
-								const char *LFT_RESTRICT LFT_NONNULL s2)
+inline char *_Nullable	ft_strjoin(const char *restrict _Nonnull s1,
+								const char *restrict _Nonnull s2)
 {
 	char	*out;
 	size_t	len1;

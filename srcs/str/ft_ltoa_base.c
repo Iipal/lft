@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:07:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 19:29:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	add_aux(int64_t n,
 				int64_t b,
-				char *LFT_RESTRICT out,
-				int64_t *LFT_RESTRICT p)
+				char *restrict out,
+				int64_t *restrict p)
 {
 	static const char	base[17] = "0123456789ABCDEF";
 
@@ -24,7 +24,7 @@ static void	add_aux(int64_t n,
 	out[(*p)++] = base[ABS(n % b)];
 }
 
-char *LFT_NULLALBE	ft_ltoa_base(int64_t value, uint8_t base)
+char *_Nullable	ft_ltoa_base(int64_t value, uint8_t base)
 {
 	char	*out;
 	int64_t	p;
