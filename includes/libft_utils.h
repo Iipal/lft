@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 12:46:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:51:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 **	 -1 - Reading error.]
 */
 int32_t
-ft_gnl(int32_t fd, char *restrict _Nonnull *restrict _Nullable line);
+ft_gnl(int32_t fd, char *restrict *restrict line);
 
 /*
 **	Compare if one of \param n va_list arguments is equal to \param cmp.
@@ -44,9 +44,9 @@ ft_is_one_of_n(int cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
 ft_is_one_of_n(long cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
-ft_is_one_of_n(char *restrict _Nonnull cmp, size_t n, ...);
+ft_is_one_of_n(char *restrict cmp, size_t n, ...);
 size_t __attribute__((__overloadable__))
-ft_is_one_of_n(char *restrict _Nonnull cmp, size_t cmp_len, size_t n, ...);
+ft_is_one_of_n(char *restrict cmp, size_t cmp_len, size_t n, ...);
 
 /*
 **	\return How many digits in \param n.
@@ -67,46 +67,46 @@ ft_digits(size_t n);
 **	 the function will return number of digits including this .(dot).
 */
 size_t
-ft_fdigits_str(const char *_Nonnull str);
+ft_strfn(const char *str);
 
 /*
 **	\return true is \param str contain only digits or false if not.
 */
 bool
-ft_isdigits_str(const char *restrict _Nonnull str);
+ft_strisd(const char *restrict str);
 
 /*
 **	\return true is \param str contain only digits and valid float value
 **	 or false if not.
 */
 bool
-ft_isfdigits_str(const char *restrict _Nonnull str);
+ft_strisf(const char *restrict str);
 
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
 bool __attribute__((__overloadable__))
-ft_ishex_str(const char *restrict _Nonnull str);
+ft_strishex(const char *restrict str);
 bool __attribute__((__overloadable__))
-ft_ishex_str(const char *restrict _Nonnull str, size_t n);
+ft_strishex(const char *restrict str, size_t n);
 
 /*
 **	\return true is \param str contain only hex digits or false if not.
 */
 bool
-ft_isalpha_str(const char *restrict _Nonnull str);
+ft_strisa(const char *restrict str);
 
 /*
 **	\return How many blanks skips in string \param str.
 */
 size_t
-ft_skip_blanks(const char *restrict _Nonnull str);
+ft_strnblank(const char *restrict str);
 
 /*
 **	\return How many symbols to first blank symbol in string \param str.
 */
 size_t
-ft_skip_to_blank(const char *restrict _Nonnull str);
+ft_strntoblank(const char *restrict str);
 
 /*
 **	Randomize unsigned decimal number.
@@ -117,37 +117,37 @@ extern size_t
 ft_rand(size_t limit);
 
 extern void __attribute__((__overloadable__))
-ft_swap(char *restrict _Nonnull a,
-		char *restrict _Nonnull b);
+ft_swap(char *restrict a,
+		char *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(short *restrict _Nonnull a,
-		short *restrict _Nonnull b);
+ft_swap(short *restrict a,
+		short *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(int *restrict _Nonnull a,
-		int *restrict _Nonnull b);
+ft_swap(int *restrict a,
+		int *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(long *restrict _Nonnull a,
-		long *restrict _Nonnull b);
+ft_swap(long *restrict a,
+		long *restrict b);
 
 
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned char *restrict _Nonnull a,
-		unsigned char *restrict _Nonnull b);
+ft_swap(unsigned char *restrict a,
+		unsigned char *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned short *restrict _Nonnull a,
-		unsigned short *restrict _Nonnull b);
+ft_swap(unsigned short *restrict a,
+		unsigned short *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned int *restrict _Nonnull a,
-		unsigned int *restrict _Nonnull b);
+ft_swap(unsigned int *restrict a,
+		unsigned int *restrict b);
 
 extern void __attribute__((__overloadable__))
-ft_swap(unsigned long *restrict _Nonnull a,
-		unsigned long *restrict _Nonnull b);
+ft_swap(unsigned long *restrict a,
+		unsigned long *restrict b);
 
 
 #endif

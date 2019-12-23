@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigits_str.c                                  :+:      :+:    :+:   */
+/*   ft_strchrnul.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 20:10:53 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/12/23 13:34:07 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/12/23 20:26:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_isdigits_str(const char *restrict _Nonnull str)
+char	*ft_strchrnul(const char *str, char c)
 {
-	size_t	i;
-
-	i = ~0UL;
-	while (str[++i])
-		if (!F_ISDIGIT(str[i]))
-			return (false);
-	return (true);
+	while (*str && *str != c)
+		++str;
+	return ((char*)str);
 }

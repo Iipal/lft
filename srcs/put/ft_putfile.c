@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 12:21:35 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:52:57 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_putfile(const char *restrict _Nonnull filename)
+bool	ft_putfile(const char *restrict filename)
 {
 	const int32_t	fd = open(filename, O_RDONLY);
 	char			*temp;

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isfdigits_str.c                                 :+:      :+:    :+:   */
+/*   ft_isdigits_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 20:02:20 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/05/13 20:10:53 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/12/23 20:48:09 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_isfdigits_str(const char *restrict _Nonnull str)
+bool	ft_strisd(const char *restrict str)
 {
 	size_t	i;
-	bool	dot;
 
 	i = ~0UL;
-	dot = false;
 	while (str[++i])
-	{
-		if (!dot && '.' == str[i++])
-			dot = true;
 		if (!F_ISDIGIT(str[i]))
 			return (false);
-	}
 	return (true);
 }

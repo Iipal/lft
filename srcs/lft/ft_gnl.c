@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 12:31:02 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/02 20:29:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 21:01:48 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int32_t	catline_recursive(int32_t fd, ssize_t nbytes,
 	char	*temp_nl;
 	size_t	to_nl;
 
-	to_nl = ft_skip_to_blank(data[fd]);
+	to_nl = ft_strntoblank(data[fd]);
 	if ('\n' == data[fd][to_nl])
 	{
 		*line = ft_strndup(data[fd], to_nl);

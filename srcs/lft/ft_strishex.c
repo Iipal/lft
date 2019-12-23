@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ishex_str.c                                     :+:      :+:    :+:   */
+/*   ft_strishex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/19 12:44:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:50:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 bool __attribute__((__overloadable__))
-	ft_ishex_str(const char *restrict _Nonnull s)
+	ft_strishex(const char *restrict s)
 {
 	size_t		i;
 	const char	*str = (const char*)s;
-	const char	valid_hex[] = "0123456789abcdef";
+	const char	valid_hex[24] = "0123456789abcdef";
 
 	while (*str)
 	{
@@ -33,11 +33,11 @@ bool __attribute__((__overloadable__))
 }
 
 bool __attribute__((__overloadable__))
-	ft_ishex_str(const char *restrict _Nonnull s, size_t n)
+	ft_strishex(const char *restrict s, size_t n)
 {
 	size_t		i;
 	const char	*str = (const char*)s;
-	const char	valid_hex[] = "0123456789abcdef";
+	const char	valid_hex[24] = "0123456789abcdef";
 
 	while (n--)
 	{

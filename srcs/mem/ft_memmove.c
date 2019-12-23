@@ -6,15 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 13:43:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:56:22 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *_Nonnull	ft_memmove(void *restrict _Nonnull dest,
-						const void *restrict _Nonnull src,
-						size_t len)
+void	*ft_memmove(void *restrict dest, const void *restrict src, size_t len)
 {
 	const __u_char	*sc = (const __u_char*)src;
 	__u_char		*dst;

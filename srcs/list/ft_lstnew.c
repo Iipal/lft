@@ -6,14 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:20:04 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 21:01:11 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_list.h"
 
-t_list *_Nullable	ft_lstnew(void const *restrict _Nonnull data,
-							const size_t data_size)
+t_list	*ft_lstnew(void const *restrict data, const size_t data_size)
 {
 	t_list	*out;
 

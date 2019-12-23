@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skip_blanks.c                                   :+:      :+:    :+:   */
+/*   ft_strisf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 17:42:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/06/10 20:02:20 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/12/23 20:50:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_skip_blanks(const char *restrict _Nonnull str)
+bool	ft_strisf(const char *restrict str)
 {
 	size_t	i;
+	bool	dot;
 
 	i = ~0UL;
-	while (str[++i] && F_ISBLANK(str[i]))
-		;
-	return (i);
+	dot = false;
+	while (str[++i])
+	{
+		if (!dot && '.' == str[i++])
+			dot = true;
+		if (!F_ISDIGIT(str[i]))
+			return (false);
+	}
+	return (true);
 }

@@ -6,18 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 19:26:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 21:02:22 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *_Nullable	ft_strtrim(const char *restrict _Nonnull s)
+char	*ft_strtrim(const char *restrict s)
 {
 	size_t	start;
 	size_t	len;
 
-	start = ft_skip_blanks(s);
+	start = ft_strnblank(s);
 	if (!s[start])
 		return (ft_strdup(s + start));
 	len = ft_strlen(s) - 1UL;

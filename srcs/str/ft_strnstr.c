@@ -6,15 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 17:41:32 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:24:03 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *_Nullable	ft_strnstr(char *_Nonnull str,
-						const char *restrict _Nonnull to_find,
-						size_t len)
+char	*ft_strnstr(char *str, const char *restrict to_find, size_t len)
 {
 	const size_t	to_find_len = ft_strlen(to_find);
 

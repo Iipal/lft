@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:22:59 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:54:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 20:27:59 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *_Nullable ft_i128toa(__int128_t n)
+char	*ft_i128toa(__int128_t n)
 {
 	char		*out;
 	__int128_t	len;
