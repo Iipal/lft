@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:55:06 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/12/23 12:46:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,15 @@ ft_is_one_of_n(char *restrict _Nonnull cmp, size_t cmp_len, size_t n, ...);
 /*
 **	\return How many digits in \param n.
 */
-size_t
-ft_digits(int64_t n);
+size_t __attribute__((__overloadable__))
+ft_digits(int n);
+size_t __attribute__((__overloadable__))
+ft_digits(long n);
+size_t __attribute__((__overloadable__))
+ft_digits(unsigned int n);
+size_t __attribute__((__overloadable__))
+ft_digits(size_t n);
+
 
 /*
 **	\return How many digits in \param str.
