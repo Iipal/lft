@@ -6,56 +6,58 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:23:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/01/31 21:45:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t			ft_ss_words(const char *s, int32_t c)
+static size_t			s_count_words(const char *s, int32_t c)
 {
-	size_t	counter;
-	bool	is_word;
+	size_t	words;
+	bool	is_in_word;
 
-	counter = 0UL;
-	is_word = false;
+	words = 0UL;
+	is_in_word = *s == c;
 	while (*s)
-	{
-		if (is_word && *s == c)
-			is_word = true;
-		if (!is_word && *s != c)
+		if (!is_in_word)
 		{
-			++counter;
-			is_word = false;
+			while (*s && *s == c)
+				++s;
+			is_in_word = true;
+			++words;
 		}
-		++s;
-	}
-	return (counter);
-}
-
-static inline size_t	ft_ss_wlen(char *restrict s, int32_t c)
-{
-	const char *restrict	ch = ft_strchr(s, c);
-
-	return (ch ? (size_t)(ch - s) : ft_strlen(s));
+		else
+		{
+			while (*s && *s != c)
+				++s;
+			is_in_word = false;
+		}
+	return (words);
 }
 
 char					**ft_strsplit(char *s, int32_t c)
 {
 	char	**out;
-	size_t	w_counter;
+	char	*tmp;
+	size_t	words_count;
 	size_t	i;
 
+	words_count = s_count_words(s, c);
+	out = (char**)ft_memalloc(sizeof(char*) * (words_count + 1));
 	i = ~0UL;
-	w_counter = ft_ss_words(s, c);
-	out = (char**)ft_memalloc(sizeof(char*) * (w_counter + 1));
-	while (w_counter--)
+	while (words_count > ++i)
 	{
-		s = ft_strchr(s, c);
-		out[++i] = ft_strndup(s, ft_ss_wlen(s, c));
-		if (!out[i])
+		if (!(tmp = ft_strchr(s, c)))
+		{
+			if (!(out[i] = ft_strdup(s)))
+				return (NULL);
+		}
+		else if (!(out[i] = ft_strndup(s, tmp - s)))
 			return (NULL);
-		s += ft_ss_wlen(s, c);
+		s = tmp;
+		while (s && *s && *s == c)
+			++s;
 	}
 	out[i] = NULL;
 	return (out);
