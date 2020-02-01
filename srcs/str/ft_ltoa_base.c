@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 00:07:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:27:35 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:25 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	add_aux(int64_t n, int64_t b,
+static void	add_aux(long n, long b,
 				char *restrict out,
-				int64_t *restrict p)
+				long *restrict p)
 {
 	const char	base[24] = "0123456789ABCDEF";
 
@@ -23,10 +23,10 @@ static void	add_aux(int64_t n, int64_t b,
 	out[(*p)++] = base[ABS(n % b)];
 }
 
-char	*ft_ltoa_base(int64_t value, uint8_t base)
+char	*ft_ltoa_base(long value, uint8_t base)
 {
 	char	*out;
-	int64_t	p;
+	long	p;
 
 	p = 0L;
 	if (2 > base || 16 < base)

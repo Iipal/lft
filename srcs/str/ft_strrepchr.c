@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 11:20:28 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:23:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strrepchr(char *str, int32_t s, int32_t r)
+void	ft_strrepchr(char *str, int s, int r)
 {
 	while ((str = ft_strchr(str, s)))
 		*str++ = (char)r;

@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 12:23:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:50:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:13:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ bool __attribute__((__overloadable__))
 
 	while (n--)
 	{
-		i = ~0ULL;
+		i = ~0UL;
 		while (valid_hex[++i])
 			if (F_TOLOWER(*str) == valid_hex[i])
 				break ;

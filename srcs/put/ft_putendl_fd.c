@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:39:54 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/18 20:03:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putendl_fd(const char *restrict s, int32_t fd)
+inline void	ft_putendl_fd(const char *restrict s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	F_PUTSCHAR_FD("\n", fd);

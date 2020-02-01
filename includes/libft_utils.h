@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:09:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:51:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 **	 1 - Successful read 1 line from file.
 **	 -1 - Reading error.]
 */
-int32_t
-ft_gnl(int32_t fd, char *restrict *restrict line);
+int
+ft_gnl(int fd, char *restrict *restrict line);
 
 /*
 **	Compare if one of \param n va_list arguments is equal to \param cmp.
@@ -51,15 +51,17 @@ ft_is_one_of_n(char *restrict cmp, size_t cmp_len, size_t n, ...);
 /*
 **	\return How many digits in \param n.
 */
+# ifdef __x86_64__
 size_t __attribute__((__overloadable__))
-ft_digits(int n);
+ft_digits(unsigned int n);
+# endif
+
 size_t __attribute__((__overloadable__))
 ft_digits(long n);
 size_t __attribute__((__overloadable__))
-ft_digits(unsigned int n);
+ft_digits(int n);
 size_t __attribute__((__overloadable__))
 ft_digits(size_t n);
-
 
 /*
 **	\return How many digits in \param str.

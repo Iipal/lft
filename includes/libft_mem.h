@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:08:05 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:55:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 **	 \param dest with the \param c.
 */
 void
-*ft_memset(void *restrict dest, int32_t c, size_t len);
+*ft_memset(void *restrict dest, int c, size_t len);
 
 /*
 **	\return \param dest where copies \param n bytes from
@@ -50,7 +50,7 @@ void
 **	 of \param s for the first instance of c.
 */
 void
-*ft_memchr(const void *restrict ptr, int32_t c, size_t n);
+*ft_memchr(const void *restrict ptr, int c, size_t n);
 
 /*
 **	Compares the first \param n bytes of \param s1 and \param s2.
@@ -59,7 +59,7 @@ void
 **	 respectively, to be less than, to match,
 **	 or be greater than the first \param n bytes of \param s2.
 */
-int32_t
+int
 ft_memcmp(const void *restrict s1, const void *restrict s2, size_t n);
 
 /*

@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:58:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2020/01/31 21:45:36 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t			s_count_words(const char *s, int32_t c)
+static size_t			s_count_words(const char *s, int c)
 {
 	size_t	words;
 	bool	is_in_word;
@@ -36,7 +36,7 @@ static size_t			s_count_words(const char *s, int32_t c)
 	return (words);
 }
 
-char					**ft_strsplit(char *s, int32_t c)
+char					**ft_strsplit(char *s, int c)
 {
 	char	**out;
 	char	*tmp;

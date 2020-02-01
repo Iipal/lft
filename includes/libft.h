@@ -6,14 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 10:04:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/02 20:30:24 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 18:54:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <math.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdarg.h>

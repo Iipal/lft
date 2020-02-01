@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 17:06:13 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 20:42:29 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,20 @@ ft_strrev(char *restrict str);
 **	Replace all \param s symbols in string \param str to \param r.
 */
 void
-ft_strrepchr(char *str, int32_t s, int32_t r);
+ft_strrepchr(char *str, int s, int r);
 
 /*
 **	Compare string \param s1 with \param s2.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-int32_t
+int
 ft_strcmp(const char *s1, const char *s2);
 
 /*
 **	Compare string \param s1 with \param s2 by \param n symbols.
 **	\return difference of not matching symbols or 0 if strings equal.
 */
-int32_t
+int
 ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /*
@@ -136,7 +136,7 @@ char
 **	 in the string \param s
 */
 char
-*ft_strrchr(char *restrict s, int32_t c);
+*ft_strrchr(char *restrict s, int c);
 
 /*
 ** \return the first occurrence of the substring \param to_find
@@ -178,14 +178,25 @@ extern char
 
 /*
 **	\return allocate a copy of the string \param s without whitespaces
-**	 at the beginning or at the end of the string.
-**	 Will be considered as whitespaces the following characters ’ ’, ’\n’, ’\t’.
-**	 If s has no whitespaces at the beginning or at the end,
+**	 at the beginning and at the end of the string.
+**	 Will be considered as whitespaces all the ASCII codes from 9 to 13 and 32.
+**	 If \param s has no whitespaces at the beginning or at the end,
 **	 the function returns a copy of \param s.
 **	 If the allocation fails the function returns NULL.
 */
 char
 *ft_strtrim(const char *restrict s);
+
+/*
+**	\return dst with trimmed string \param s without whitespaces
+**	 at the beginning and at the end of the string.
+**	 Will be considered as whitespaces all the ASCII codes from 9 to 13 and 32.
+**	 If \param s has no whitespaces at the beginning or at the end,
+**	 the function just copy \param s to \param dst.
+**	 If the \paramd dst not allocated undefined behavior exepted.
+*/
+char
+*ft_strtrimcpy(char *dst, const char *s);
 
 /*
 ** \return allocate an array of “fresh” strings (all ending with ’\0’,
@@ -194,7 +205,7 @@ char
 **	 If the allocation fails the function returns NULL.
 */
 char
-**ft_strsplit(char *s, int32_t c);
+**ft_strsplit(char *s, int c);
 
 /*
 **	Convert string \param str to double type.
@@ -205,52 +216,46 @@ double
 ft_atof(const char *str);
 
 /*
-**	Convert string \param str to int32_t type.
+**	Convert string \param str to int type.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string.
 */
-int32_t
+int
 ft_atoi(const char *restrict str);
 
 /*
-**	Convert string \param str to int64_t number.
+**	Convert string \param str to long number.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string.
 */
-int64_t
+long
 ft_atol(const char *str);
 
 /*
-**	Convert string \param str to int32_t number in \param base notation.
+**	Convert string \param str to int number in \param base notation.
 **	\return 0 if string \param str is invalid,
 **	 else - number which contained in string converted in \param base notation.
 */
-int32_t
+int
 ft_atoi_base(const char *str, int8_t base);
 
 /*
 **	\return convert number \param n to string in \param base number system.
 */
 char
-*ft_ltoa_base(int64_t value, uint8_t base);
+*ft_ltoa_base(long value, uint8_t base);
 
 /*
 **	\return convert number \param n to string.
 */
 char
-*ft_i128toa(__int128_t n);
+*ft_itoa(int n);
 
 /*
 **	\return convert number \param n to string.
 */
 char
-*ft_itoa(int32_t n);
-
-/*
-**	\return convert number \param n to string.
-*/
-char
-*ft_ltoa(int64_t n);
+*ft_ltoa(long n);
 
 /*
 **	\return convert number \param num to \param dst string

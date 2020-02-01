@@ -6,16 +6,16 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 11:11:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 21:02:32 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:12:09 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int64_t	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	int64_t	num;
-	int64_t	sign;
+	long	num;
+	long	sign;
 
 	num = 0L;
 	str += ft_strnblank(str);

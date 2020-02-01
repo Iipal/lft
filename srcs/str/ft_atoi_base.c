@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:46:01 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/12/23 21:02:09 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static bool
 	return (false);
 }
 
-static inline int32_t __attribute__((__always_inline__))
+static inline int __attribute__((__always_inline__))
 	add_value_of(const char c)
 {
-	int32_t	out;
+	int	out;
 
 	out = 0;
 	if (F_ISDIGIT(c))
@@ -36,10 +36,10 @@ static inline int32_t __attribute__((__always_inline__))
 	return (out);
 }
 
-int32_t
+int
 	ft_atoi_base(const char *str, int8_t base)
 {
-	int32_t		num;
+	int		num;
 	int8_t		sign;
 	const char	valid_hex[24] = "0123456789abcdef";
 

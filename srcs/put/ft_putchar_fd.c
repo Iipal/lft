@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 13:34:25 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/11/05 12:05:09 by tmaluh           ###   ########.fr       */
+/*   Updated: 2020/02/01 19:16:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline void	ft_putchar_fd(int32_t c, int32_t fd)
+inline void	ft_putchar_fd(int c, int fd)
 {
 	write(fd, &c, 1);
 }
