@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   lfti_strtrim_base.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 19:26:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2020/02/01 06:34:06 by tmaluh           ###   ########.fr       */
+/*   Created: 2020/02/01 01:42:02 by tmaluh            #+#    #+#             */
+/*   Updated: 2020/02/01 02:47:08 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,16 @@
 #include "libft_internal.h"
 #undef LIBFT_INTERNAL
 
-char	*ft_strtrim(const char *restrict s)
+size_t	lfti_strtrim_base(const char *restrict s)
 {
-	return (ft_strsub(s, ft_strnblank(s), lfti_strtrim_base(s)));
+	size_t	start;
+	size_t	len;
+
+	start = ft_strnblank(s);
+	if (!s[start])
+		return (0UL);
+	len = ft_strlen(s) - 1UL;
+	while (--len > 0UL && F_ISBLANK(s[len]))
+		;
+	return (len - start + 1UL);
 }

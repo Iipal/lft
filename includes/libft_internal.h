@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   libft_internal.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 19:26:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2020/02/01 06:34:06 by tmaluh           ###   ########.fr       */
+/*   Created: 2020/02/01 01:40:28 by tmaluh            #+#    #+#             */
+/*   Updated: 2020/02/01 01:46:08 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_INTERNAL_H
+# define LIBFT_INTERNAL_H
 
-#define LIBFT_INTERNAL
-#include "libft_internal.h"
-#undef LIBFT_INTERNAL
+# ifndef LIBFT_INTERNAL
+#  error "include only libft.h"
+# endif
 
-char	*ft_strtrim(const char *restrict s)
-{
-	return (ft_strsub(s, ft_strnblank(s), lfti_strtrim_base(s)));
-}
+/*
+** Internal base function for ft_strtrim and ft_strtrimcpy.
+** \return counter of how much bytes to copy from start to end
+**  without include whitespaces at the start and at the end of the \param s.
+*/
+size_t	lfti_strtrim_base(const char *restrict s);
+
+#endif
